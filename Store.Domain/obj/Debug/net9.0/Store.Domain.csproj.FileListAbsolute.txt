@@ -1,0 +1,25 @@
+C:\Users\huawe\source\repos\Store\Store.Domain\bin\Debug\net9.0\Store.Domain.deps.json
+C:\Users\huawe\source\repos\Store\Store.Domain\bin\Debug\net9.0\Store.Domain.dll
+C:\Users\huawe\source\repos\Store\Store.Domain\bin\Debug\net9.0\Store.Domain.pdb
+C:\Users\huawe\source\repos\Store\Store.Domain\obj\Debug\net9.0\Store.Domain.csproj.AssemblyReference.cache
+C:\Users\huawe\source\repos\Store\Store.Domain\obj\Debug\net9.0\Store.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\huawe\source\repos\Store\Store.Domain\obj\Debug\net9.0\Store.Domain.AssemblyInfoInputs.cache
+C:\Users\huawe\source\repos\Store\Store.Domain\obj\Debug\net9.0\Store.Domain.AssemblyInfo.cs
+C:\Users\huawe\source\repos\Store\Store.Domain\obj\Debug\net9.0\Store.Domain.csproj.CoreCompileInputs.cache
+C:\Users\huawe\source\repos\Store\Store.Domain\obj\Debug\net9.0\Store.Domain.sourcelink.json
+C:\Users\huawe\source\repos\Store\Store.Domain\obj\Debug\net9.0\Store.Domain.dll
+C:\Users\huawe\source\repos\Store\Store.Domain\obj\Debug\net9.0\refint\Store.Domain.dll
+C:\Users\huawe\source\repos\Store\Store.Domain\obj\Debug\net9.0\Store.Domain.pdb
+C:\Users\huawe\source\repos\Store\Store.Domain\obj\Debug\net9.0\ref\Store.Domain.dll
+D:\C# Projects\Store\Store.Domain\bin\Debug\net9.0\Store.Domain.deps.json
+D:\C# Projects\Store\Store.Domain\bin\Debug\net9.0\Store.Domain.dll
+D:\C# Projects\Store\Store.Domain\bin\Debug\net9.0\Store.Domain.pdb
+D:\C# Projects\Store\Store.Domain\obj\Debug\net9.0\Store.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\C# Projects\Store\Store.Domain\obj\Debug\net9.0\Store.Domain.AssemblyInfoInputs.cache
+D:\C# Projects\Store\Store.Domain\obj\Debug\net9.0\Store.Domain.AssemblyInfo.cs
+D:\C# Projects\Store\Store.Domain\obj\Debug\net9.0\Store.Domain.csproj.CoreCompileInputs.cache
+D:\C# Projects\Store\Store.Domain\obj\Debug\net9.0\Store.Domain.sourcelink.json
+D:\C# Projects\Store\Store.Domain\obj\Debug\net9.0\Store.Domain.dll
+D:\C# Projects\Store\Store.Domain\obj\Debug\net9.0\refint\Store.Domain.dll
+D:\C# Projects\Store\Store.Domain\obj\Debug\net9.0\Store.Domain.pdb
+D:\C# Projects\Store\Store.Domain\obj\Debug\net9.0\ref\Store.Domain.dll
