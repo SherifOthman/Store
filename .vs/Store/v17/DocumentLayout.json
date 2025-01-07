@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C# Projects\\Store\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E74B4C44-66F8-435B-9A22-37219B7C6B6D}|Store.Api\\Store.Api.csproj|d:\\c# projects\\store\\store.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E74B4C44-66F8-435B-9A22-37219B7C6B6D}|Store.Api\\Store.Api.csproj|solutionrelative:store.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\C# Projects\\Store\\Store.Api\\Program.cs",
+              "RelativeDocumentMoniker": "Store.Api\\Program.cs",
+              "ToolTip": "D:\\C# Projects\\Store\\Store.Api\\Program.cs",
+              "RelativeToolTip": "Store.Api\\Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T11:20:58.218Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

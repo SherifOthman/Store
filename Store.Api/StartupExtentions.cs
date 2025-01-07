@@ -28,10 +28,4 @@ public static class StartupExtentions
         return services;
     }
 
-    public static WebApplication ConfigureAppPiplines(this WebApplication app)
-    {
-        app.UseMiddleware<ExceptionHandlerMiddleware>();
-
-        return app;
-    }
 }

@@ -64,7 +64,7 @@ internal class UserConfiguration : IEntityTypeConfiguration<User>
                 FirstName = "Sherif",
                 LastName = "Ali",
                 Email = "customer@example.com",
-                PasswordHashed = _passwordHasher?.HashPassword(password) ?? password,
+                PasswordHashed = _passwordHasher?.HashPassword(password)?? password,
                 CreatedOn = new DateTime(2025,1,2,0,0,0, DateTimeKind.Utc)
             }
         };

@@ -334,3 +334,13 @@ D:\C# Projects\Store\Store.Api\obj\Debug\net9.0\refint\Store.Api.dll
 D:\C# Projects\Store\Store.Api\obj\Debug\net9.0\Store.Api.pdb
 D:\C# Projects\Store\Store.Api\obj\Debug\net9.0\Store.Api.genruntimeconfig.cache
 D:\C# Projects\Store\Store.Api\obj\Debug\net9.0\ref\Store.Api.dll
+D:\C# Projects\Store\Store.Api\bin\Debug\net9.0\Serilog.dll
+D:\C# Projects\Store\Store.Api\bin\Debug\net9.0\Serilog.AspNetCore.dll
+D:\C# Projects\Store\Store.Api\bin\Debug\net9.0\Serilog.Extensions.Hosting.dll
+D:\C# Projects\Store\Store.Api\bin\Debug\net9.0\Serilog.Extensions.Logging.dll
+D:\C# Projects\Store\Store.Api\bin\Debug\net9.0\Serilog.Formatting.Compact.dll
+D:\C# Projects\Store\Store.Api\bin\Debug\net9.0\Serilog.Settings.Configuration.dll
+D:\C# Projects\Store\Store.Api\bin\Debug\net9.0\Serilog.Sinks.Console.dll
+D:\C# Projects\Store\Store.Api\bin\Debug\net9.0\Serilog.Sinks.Debug.dll
+D:\C# Projects\Store\Store.Api\bin\Debug\net9.0\Serilog.Sinks.File.dll
+D:\C# Projects\Store\Store.Api\bin\Debug\net9.0\Logs\log20250107.json

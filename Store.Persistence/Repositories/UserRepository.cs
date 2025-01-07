@@ -37,20 +37,12 @@ public class UserRepository : Repository<User>, IUserRepository
 
     public Task<User?> GetByEmailAsync(string email)
     {
-        return _users.SingleOrDefaultAsync(u => u.Email.ToLower() == email.ToLower());
+        return _users.Include(u=>u.Roles)
+            .SingleOrDefaultAsync(u => u.Email.ToLower() == email.ToLower());
     }
 
-    public Task<bool> ValidateUserAsync(string email, string password)
+    public Task<bool> IsEmailRegisteredAsync(string email)
     {
-        return _users.AsNoTracking().AnyAsync(u => u.Email.ToLower() == email.ToLower());
+        return _users.AnyAsync(u => u.Email.ToLower() == email.ToLower());
     }
-
-    public Task<User?> GetUserByEmailAndPassword(string email, string passwordHashed)
-    {
-
-        return _users.SingleOrDefaultAsync(
-            u => u.Email.ToLower() == email.ToLower()
-            && u.PasswordHashed == passwordHashed);
-    }
-
 }

@@ -1,23 +1,43 @@
 ﻿
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Store.Api.Responses;
 using Store.Application.Responses;
+using System.Net;
 
 namespace Store.Api.Controllers;
 
-public class ApiController : ControllerBase
+[ApiController]
+public abstract class ApiController : ControllerBase
 {
-
-    public IActionResult HandleFailure<T>(Result<T> result)
+    protected BadRequestObjectResult HandleFailure(BaseResult result)
     {
         if (result.IsSuccess)
-            throw new InvalidOperationException($"Requst is successful {nameof(result)}");
+            throw new InvalidOperationException(
+                $"Ivalid operation because requst is already successful {nameof(result)}");
 
-        var response = new
+        var problemDetails = GetProblemDetailsFromResult(result);
+
+        return BadRequest(problemDetails);
+    }
+
+
+    private ProblemDetails GetProblemDetailsFromResult(BaseResult result)
+    {
+        var problemDetails = new ProblemDetails
         {
-            Message = result.Message ?? "An error occurrdd",
-            result.ValidationErrors
+            Title = result.Message ?? "No specific errors provided.",
+            Status = (int)HttpStatusCode.BadRequest,
+            Instance = HttpContext.Request.Path,
         };
 
-        return BadRequest(response);
+        if (result.Errors != null)
+        {
+            problemDetails.Detail = "One or more validation errors occurred.";
+            problemDetails.Extensions["errors"] = result.Errors;
+        }
+
+        return problemDetails;
     }
+
 }

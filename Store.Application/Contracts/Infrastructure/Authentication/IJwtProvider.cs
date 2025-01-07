@@ -1,9 +1,10 @@
-﻿using Store.Domain.Entities.Users;
+﻿using Store.Application.Models;
+using Store.Domain.Entities.Users;
 
 namespace Store.Application.Contracts.Infrastructure.Authentication;
 public interface IJwtProvider
 {
-    string GenerateAccessToken(User user);
-    string GenerateRefreshToken();
-    string RenewAccessToken(string RefreshToken);
+    TokenVm GenerateAccessToken(User user);
+    TokenVm GenerateRefreshToken();
+    TokenVm RenewAccessToken(string RefreshToken);
 }

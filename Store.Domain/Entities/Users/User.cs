@@ -16,8 +16,8 @@ public class User
     public int AccessFailedCount { get; set; }
     public DateTime CreatedOn { get; set; }
     public bool IsDeleted { get; set; }
-    public ICollection<Address>? Addresses { get; set; }
-    public ICollection<Role> Roles { get; set; } = null!;
+    public List<Address>? Addresses { get; set; }
+    public List<Role> Roles { get; set; } 
 
     public User()
     {
@@ -27,6 +27,8 @@ public class User
         EmailConfirmed = false;
         PhoneNumberConfirmed = false;
         AccessFailedCount = 0;
+        Addresses = new List<Address>();
+        Roles = new List<Role>();
     }
 
 }

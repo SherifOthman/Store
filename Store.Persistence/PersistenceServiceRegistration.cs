@@ -1,6 +1,5 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Store.Application.Contracts.Persistence;
@@ -16,9 +15,9 @@ public static class PersistenceServiceRegistration
     {
         services.AddDbContext<AppDbContext>(options =>
         {
-           // options.ConfigureWarnings(cfg => cfg.Ignore(RelationalEventId.PendingModelChangesWarning));
+            // options.ConfigureWarnings(cfg => cfg.Ignore(RelationalEventId.PendingModelChangesWarning));
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
-                sqlOptions=> sqlOptions.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery));
+                sqlOptions => sqlOptions.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery));
 
         });
 

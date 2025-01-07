@@ -2,7 +2,7 @@
 using Store.Application.Responses;
 
 namespace Store.Application.Fetures.Usres.Commands.Register;
-public class RegisterCommand : IRequest<Result<bool>>
+public class RegisterCommand : IRequest<BaseResult>
 {
     public string FirstName { get; set; } = string.Empty;
 

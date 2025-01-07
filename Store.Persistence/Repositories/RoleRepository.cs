@@ -22,6 +22,6 @@ public class RoleRepository : Repository<Role>,  IRoleRepository
 
     public Task<Role?> GetByNameAsync(string roleName)
     {
-        return _Role.SingleOrDefaultAsync(r=>r.Name.Equals(roleName, StringComparison.OrdinalIgnoreCase));
+        return _Role.SingleOrDefaultAsync(r=>r.Name == roleName);
     }
 }

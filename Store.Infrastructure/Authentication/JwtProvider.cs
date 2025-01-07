@@ -2,9 +2,11 @@
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Store.Application.Contracts.Infrastructure.Authentication;
+using Store.Application.Models;
 using Store.Domain.Entities.Users;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Store.Infrastructure.Authentication;
@@ -17,38 +19,69 @@ internal sealed class JwtProvider : IJwtProvider
         _options = options.CurrentValue;
     }
 
-    public string GenerateAccessToken(User user)
+    public TokenVm GenerateAccessToken(User user)
     {
-        var claims = new Claim[]
-        {
-            new(JwtRegisteredClaimNames.Sub,user.Id.ToString()),
-            new(JwtRegisteredClaimNames.Email, user.Email),
-
-        };
-
-        var signingCreadentials = new SigningCredentials(
+        var signingCredentials = new SigningCredentials(
             new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.SecurityKey)),
             SecurityAlgorithms.HmacSha256);
 
-        var token = new JwtSecurityToken(
-          issuer: _options.Issuer,
-          audience: _options.Audience,
-          claims: claims,
-          expires: DateTime.UtcNow.AddHours(_options.DurationInHours),
-          signingCredentials: signingCreadentials);
+        var tokenDescriptor = new SecurityTokenDescriptor()
+        {
+            Issuer = _options.Issuer,
+            Audience = _options.Audience,
+            Subject = new ClaimsIdentity(getUserClaims(user)),
+            Expires = DateTime.UtcNow.AddHours(_options.TokenLifeTime),
+            SigningCredentials = signingCredentials
+        };
 
-        string tokenValue = new JwtSecurityTokenHandler().WriteToken(token);
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var securityToken = tokenHandler.CreateToken(tokenDescriptor);
+        var accessToken = tokenHandler.WriteToken(securityToken);
 
-        return tokenValue;
+        return new TokenVm
+        {
+            Token = accessToken,
+            ExpiresIn = tokenDescriptor.Expires.Value
+        };
     }
 
-    public string GenerateRefreshToken()
+    public TokenVm GenerateRefreshToken()
+    {
+
+        var randomBytes = RandomNumberGenerator.GetBytes(128);
+
+        var token = Convert.ToBase64String(randomBytes)
+             .Replace('+', '-')
+             .Replace('/', '_')
+             .Replace("=", "");
+
+        return new TokenVm
+        {
+            Token = token,
+            ExpiresIn = DateTime.UtcNow.AddDays(_options.RefreshTokenLifeTime)
+        };
+    }
+
+    public TokenVm RenewAccessToken(string RefreshToken)
     {
         throw new NotImplementedException();
     }
 
-    public string RenewAccessToken(string RefreshToken)
+    private List<Claim> getUserClaims(User user)
     {
-        throw new NotImplementedException();
+        var userRoles = user.Roles.Select(u => u.Name);
+
+        var userClaims = new List<Claim>
+        {
+            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new Claim(ClaimTypes.Email, user.Email)
+        };
+
+        foreach (var role in userRoles)
+        {
+            userClaims.Add(new(ClaimTypes.Role, role));
+        }
+
+        return userClaims;
     }
 }

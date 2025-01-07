@@ -24,7 +24,7 @@ public class RegisterCommandValidator :AbstractValidator<RegisterCommand>
 
         RuleFor(x => x.PhoneNumber)
             .NotEmpty().WithMessage("{PropertyName} is required")
-            .MaximumLength(11).WithMessage("{PropertyName} must not exceed 11 characters");
+            .Length(11).WithMessage("{PropertyName} must be 11 characters");
 
     }
 }
