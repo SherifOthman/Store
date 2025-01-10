@@ -1,6 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Store.Application.Contracts.Infrastructure.Authentication;
-using Store.Domain.Common;
 using Store.Domain.Entities.Users;
 
 
@@ -16,6 +14,8 @@ public class AppDbContext : DbContext
     }
 
     public DbSet<User> Users { get; set; }
+    public DbSet<Role> Roles { get; set; }
+    public DbSet<RefreshToken> RefreshTokens { get; set; }
 
     //public AppDbContext(DbContextOptions options, ILoggedInService loggedInService)
     //    : base(options)
@@ -30,7 +30,6 @@ public class AppDbContext : DbContext
         builder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);
 
     }
-
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {

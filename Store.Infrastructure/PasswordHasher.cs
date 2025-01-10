@@ -1,6 +1,5 @@
-﻿
-using Store.Application.Contracts.Infrastructure;
-using BCrypt.Net;
+﻿using BCrypt.Net;
+using Store.Application.Contracts.Infrastructure.UserManager;
 
 namespace Store.Infrastructure;
 public class PasswordHasher : IPasswordHasher
@@ -14,4 +13,5 @@ public class PasswordHasher : IPasswordHasher
     {
         return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
     }
+
 }

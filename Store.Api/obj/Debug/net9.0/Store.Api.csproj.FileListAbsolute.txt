@@ -344,3 +344,4 @@ D:\C# Projects\Store\Store.Api\bin\Debug\net9.0\Serilog.Sinks.Console.dll
 D:\C# Projects\Store\Store.Api\bin\Debug\net9.0\Serilog.Sinks.Debug.dll
 D:\C# Projects\Store\Store.Api\bin\Debug\net9.0\Serilog.Sinks.File.dll
 D:\C# Projects\Store\Store.Api\bin\Debug\net9.0\Logs\log20250107.json
+D:\C# Projects\Store\Store.Api\bin\Debug\net9.0\Logs\log20250110.json

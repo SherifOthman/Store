@@ -32,6 +32,8 @@ internal class ProductConfiguraiton : AduitableEntityConfiguration<Product>
         builder.HasIndex(x => x.BrandId);
         builder.HasIndex(x => x.CategoryId);
 
+        builder.HasQueryFilter(x => !x.CreatedBy.IsDeleted);
+
         builder.ToTable("Products");
     }
 }

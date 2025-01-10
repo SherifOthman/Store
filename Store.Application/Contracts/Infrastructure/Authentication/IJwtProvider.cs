@@ -6,5 +6,5 @@ public interface IJwtProvider
 {
     TokenVm GenerateAccessToken(User user);
     TokenVm GenerateRefreshToken();
-    TokenVm RenewAccessToken(string RefreshToken);
+
 }

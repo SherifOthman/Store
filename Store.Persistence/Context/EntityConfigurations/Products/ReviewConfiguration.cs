@@ -27,6 +27,8 @@ internal class ReviewConfiguration : IEntityTypeConfiguration<Review>
         builder.HasIndex(x => x.UserId);
         builder.HasIndex(x => x.ProductId);
 
+        builder.HasQueryFilter(x => !x.User.IsDeleted);
+
         builder.ToTable("Reviews");
     }
 }

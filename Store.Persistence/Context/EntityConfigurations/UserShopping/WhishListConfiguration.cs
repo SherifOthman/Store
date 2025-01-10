@@ -2,11 +2,6 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Store.Domain.Entities.Users;
 using Store.Domain.Entities.UserShopping;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Store.Dal.Context.Config.UserShopping;
 

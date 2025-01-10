@@ -12,8 +12,8 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-     
-        CreateMap<User, RegisterCommand>().ReverseMap();
-        
+
+        CreateMap<RegisterCommand, User>()
+            .ForMember(dest => dest.PasswordHashed, src => src.MapFrom(src => src.Password));
     }
 }

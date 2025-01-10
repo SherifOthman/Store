@@ -21,6 +21,8 @@ internal class WhishListItemConfiguration : IEntityTypeConfiguration<WishListIte
 
         builder.HasIndex(x => x.ProductInventoryId);
 
+        builder.HasQueryFilter(x => !x.ProductInventory.CreatedBy.IsDeleted);
+
         builder.ToTable("WishListItems");
     }
 }

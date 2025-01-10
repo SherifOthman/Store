@@ -21,6 +21,9 @@ internal class ShoppingCartItemConfiguration : IEntityTypeConfiguration<Shopping
 
         builder.HasIndex(x => x.ProductInventoryId);
 
+        builder.HasQueryFilter(x => !x.ProductInventory.CreatedBy.IsDeleted);
+       
+
         builder.ToTable("ShoppingCartItems");
     }
 }

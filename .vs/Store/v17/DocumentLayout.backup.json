@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\C# Projects\\Store\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D5CB7FDC-B2C4-4837-9C54-64F783C01CF0}|Store.Persistence\\Store.Persistence.csproj|d:\\c# projects\\store\\store.persistence\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5CB7FDC-B2C4-4837-9C54-64F783C01CF0}|Store.Persistence\\Store.Persistence.csproj|solutionrelative:store.persistence\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5CB7FDC-B2C4-4837-9C54-64F783C01CF0}|Store.Persistence\\Store.Persistence.csproj|d:\\c# projects\\store\\store.persistence\\usermanging\\usermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5CB7FDC-B2C4-4837-9C54-64F783C01CF0}|Store.Persistence\\Store.Persistence.csproj|solutionrelative:store.persistence\\usermanging\\usermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9872A92-B171-400E-9795-93A9F48CD98A}|Store.Application\\Store.Application.csproj|d:\\c# projects\\store\\store.application\\fetures\\usres\\commands\\refreshtokens\\refreshtokencommandhanlder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9872A92-B171-400E-9795-93A9F48CD98A}|Store.Application\\Store.Application.csproj|solutionrelative:store.application\\fetures\\usres\\commands\\refreshtokens\\refreshtokencommandhanlder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E74B4C44-66F8-435B-9A22-37219B7C6B6D}|Store.Api\\Store.Api.csproj|d:\\c# projects\\store\\store.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E74B4C44-66F8-435B-9A22-37219B7C6B6D}|Store.Api\\Store.Api.csproj|solutionrelative:store.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +26,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "D:\\C# Projects\\Store\\Store.Persistence\\Repositories\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Store.Persistence\\Repositories\\UnitOfWork.cs",
+              "ToolTip": "D:\\C# Projects\\Store\\Store.Persistence\\Repositories\\UnitOfWork.cs",
+              "RelativeToolTip": "Store.Persistence\\Repositories\\UnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T22:19:28.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserManager.cs",
+              "DocumentMoniker": "D:\\C# Projects\\Store\\Store.Persistence\\UserManging\\UserManager.cs",
+              "RelativeDocumentMoniker": "Store.Persistence\\UserManging\\UserManager.cs",
+              "ToolTip": "D:\\C# Projects\\Store\\Store.Persistence\\UserManging\\UserManager.cs",
+              "RelativeToolTip": "Store.Persistence\\UserManging\\UserManager.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAywJoAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T21:53:49.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\C# Projects\\Store\\Store.Api\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Store.Api\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\C# Projects\\Store\\Store.Api\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Store.Api\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAQwDkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T19:15:27.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RefreshTokenCommandHanlder.cs",
+              "DocumentMoniker": "D:\\C# Projects\\Store\\Store.Application\\Fetures\\Usres\\Commands\\RefreshTokens\\RefreshTokenCommandHanlder.cs",
+              "RelativeDocumentMoniker": "Store.Application\\Fetures\\Usres\\Commands\\RefreshTokens\\RefreshTokenCommandHanlder.cs",
+              "ToolTip": "D:\\C# Projects\\Store\\Store.Application\\Fetures\\Usres\\Commands\\RefreshTokens\\RefreshTokenCommandHanlder.cs",
+              "RelativeToolTip": "Store.Application\\Fetures\\Usres\\Commands\\RefreshTokens\\RefreshTokenCommandHanlder.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAmwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T16:48:12.761Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -1,7 +1,7 @@
 ﻿using System.Xml;
 
-namespace Store.Application.Fetures.Usres.Commands.Login;
-public class LoginCommandResponse
+namespace Store.Application.Responses;
+public class TokenResponse
 {
     public required string AccessToken { get; set; }
     public required DateTime ExpiresIn { get; set; }

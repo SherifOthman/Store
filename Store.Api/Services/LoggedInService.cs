@@ -21,7 +21,7 @@ public class LoggedInService : ILoggedInService
 
             if (!int.TryParse(indentifer, out int userId))
             {
-                userId = -1;
+                throw new InvalidOperationException("User identifier is missing or invalid.");
             }
 
             return userId;

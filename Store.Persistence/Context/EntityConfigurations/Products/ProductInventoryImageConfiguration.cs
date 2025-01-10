@@ -20,6 +20,8 @@ internal class ProductInventoryImageConfiguration : IEntityTypeConfiguration<Pro
 
         builder.HasIndex(x=>x.ProductInventoryId);
 
+        builder.HasQueryFilter(x => !x.productInventory.CreatedBy.IsDeleted);
+
         builder.ToTable("ProductInventoryImages");
     }
 }

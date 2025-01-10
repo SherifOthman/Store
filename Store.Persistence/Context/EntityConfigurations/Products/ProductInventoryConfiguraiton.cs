@@ -24,6 +24,9 @@ internal class ProductInventoryConfiguraiton : AduitableEntityConfiguration<Prod
 
         builder.HasIndex(x => x.ProductId);
 
+        builder.HasQueryFilter(x => !x.CreatedBy.IsDeleted);
+
+
         builder.ToTable("ProductInventories");
     }
 }

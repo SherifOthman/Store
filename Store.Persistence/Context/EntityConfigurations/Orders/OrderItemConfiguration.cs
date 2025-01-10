@@ -25,6 +25,8 @@ internal class OrderItemConfiguration : IEntityTypeConfiguration<OrderItem>
 
         builder.HasIndex(x => x.ProductInventoryId);
 
+        builder.HasQueryFilter(x => !x.ProductInventory.CreatedBy.IsDeleted);
+
         builder.ToTable("OrderItems");
     }
 }

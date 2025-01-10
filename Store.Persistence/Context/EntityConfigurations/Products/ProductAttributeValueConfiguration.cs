@@ -25,6 +25,8 @@ internal class ProductAttributeValueConfiguration : IEntityTypeConfiguration<Pro
 
         builder.HasIndex(x => x.AttributeId);
 
+        builder.HasQueryFilter(x => !x.ProductInventory.CreatedBy.IsDeleted);
+
         builder.ToTable("ProductAttributeValues");
     }
 }

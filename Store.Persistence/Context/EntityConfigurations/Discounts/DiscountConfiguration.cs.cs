@@ -31,6 +31,8 @@ public class DiscountConfiguration : IEntityTypeConfiguration<Discount>
 
         builder.HasIndex(x => x.DiscountTypeId);
 
+        builder.HasQueryFilter(x => !x.ProductInventory.CreatedBy.IsDeleted);
+
         builder.ToTable("Discounts");
 
     }

@@ -35,6 +35,8 @@ internal class ShippingConfiguration : IEntityTypeConfiguration<Shipping>
         builder.HasIndex(x => x.OrderId)
             .IsUnique();
 
+        builder.HasQueryFilter(x => !x.Order.User.IsDeleted);
+
         builder.ToTable("Shippings");
 
     }

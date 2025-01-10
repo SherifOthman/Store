@@ -16,7 +16,7 @@ where TRequest : IRequest<TResponse>
     public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
     {
         _logger.LogInformation(
-            "Starting Request {@RequestName}, {@DateTimeUtc}",
+            "Proccessing Request {@RequestName}, {@DateTimeUtc}",
             typeof(TRequest).Name,
             DateTime.UtcNow);
 
@@ -27,10 +27,10 @@ where TRequest : IRequest<TResponse>
             if (baseResult.IsFaliure)
             {
                 _logger.LogError(
-               "Completed Request {@RequestName}, {@Error}, {@DateTimeUtc}",
-               typeof(TRequest).Name,
-               baseResult.Message,
-               DateTime.UtcNow);
+                    "Request {@RequestName} failed with error: {@Error}, at {@DateTimeUtc}",
+                    typeof(TRequest).Name,
+                    baseResult.Message,
+                    DateTime.UtcNow);
             }
             else
             {

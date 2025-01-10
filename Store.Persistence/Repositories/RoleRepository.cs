@@ -10,18 +10,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Store.Persistence.Repositories;
-public class RoleRepository : Repository<Role>,  IRoleRepository
+public class RoleRepository : Repository<Role>, IRoleRepository
 {
-    private readonly DbSet<Role> _Role;
-
     public RoleRepository(AppDbContext context)
-        :base(context)
+        : base(context)
     {
-        _Role = context.Set<Role>();
     }
 
-    public Task<Role?> GetByNameAsync(string roleName)
+    public Task<Role?> GetByNameAsync(string roleName, CancellationToken token)
     {
-        return _Role.SingleOrDefaultAsync(r=>r.Name == roleName);
+        return context.Roles.SingleOrDefaultAsync(r => r.Name == roleName, token);
     }
+
+
 }

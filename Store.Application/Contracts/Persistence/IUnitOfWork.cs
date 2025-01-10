@@ -3,10 +3,10 @@
 namespace Store.Application.Contracts.Persistence;
 public interface IUnitOfWork : IAsyncDisposable
 {
-    IUserRepository Users { get; }
     IRoleRepository Roles { get; }
+    IRefreshTokenRepository RefreshTokens { get; }
 
-    public Task<int> CompleteAsync();
+    public Task<int> CompleteAsync(CancellationToken token);
 
     public IRepository<TEntity> GetRepository<TEntity>() where TEntity : class;
 

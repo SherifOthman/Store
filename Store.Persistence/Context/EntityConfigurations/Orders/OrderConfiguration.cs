@@ -30,6 +30,8 @@ internal class OrderConfiguration : IEntityTypeConfiguration<Order>
 
         builder.HasIndex(x => x.UserId);
 
+        builder.HasQueryFilter(x => !x.User.IsDeleted);
+
         builder.ToTable("Orders");
     }
 }

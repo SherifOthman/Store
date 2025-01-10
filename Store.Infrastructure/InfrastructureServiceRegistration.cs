@@ -1,8 +1,8 @@
 ﻿
 
 using Microsoft.Extensions.DependencyInjection;
-using Store.Application.Contracts.Infrastructure;
 using Store.Application.Contracts.Infrastructure.Authentication;
+using Store.Application.Contracts.Infrastructure.UserManager;
 using Store.Infrastructure.Authentication;
 
 namespace Store.Infrastructure;

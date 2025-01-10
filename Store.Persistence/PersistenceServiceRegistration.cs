@@ -2,10 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Store.Application.Contracts.Infrastructure.UserManager;
 using Store.Application.Contracts.Persistence;
 using Store.Dal.Context;
 
 using Store.Persistence.Repositories;
+using Store.Persistence.UserManging;
 
 namespace Store.Persistence;
 public static class PersistenceServiceRegistration
@@ -22,6 +24,7 @@ public static class PersistenceServiceRegistration
         });
 
         services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped<IUserManager, UserManager>();
 
         return services;
     }

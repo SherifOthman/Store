@@ -24,6 +24,7 @@ public static class StartupExtentions
 
         services.ConfigureOptions<JwtOptionsSetup>();
         services.ConfigureOptions<JwtBearerOptionsSetup>();
+        services.ConfigureOptions<ScalarOptionsSetup>();
 
         return services;
     }

@@ -15,7 +15,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Store.Application.Fetures.Usres.Commands.Login.LoginCommandResponse",
+        "Type": "Store.Application.Responses.TokenResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -30,7 +30,7 @@
           "application/json",
           "text/json"
         ],
-        "StatusCode": 400
+        "StatusCode": 401
       }
     ]
   },
@@ -52,7 +52,7 @@
       {
         "Type": "System.Void",
         "MediaTypes": [],
-        "StatusCode": 204
+        "StatusCode": 200
       },
       {
         "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
@@ -61,7 +61,42 @@
           "application/json",
           "text/json"
         ],
-        "StatusCode": 400
+        "StatusCode": 401
+      }
+    ]
+  },
+  {
+    "ContainingType": "Store.Api.Controllers.AuthController",
+    "Method": "RefreshToken",
+    "RelativePath": "api/auth/RfreshToken/{token}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Store.Application.Responses.TokenResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
       }
     ]
   }

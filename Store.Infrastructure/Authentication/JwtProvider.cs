@@ -62,11 +62,6 @@ internal sealed class JwtProvider : IJwtProvider
         };
     }
 
-    public TokenVm RenewAccessToken(string RefreshToken)
-    {
-        throw new NotImplementedException();
-    }
-
     private List<Claim> getUserClaims(User user)
     {
         var userRoles = user.Roles.Select(u => u.Name);

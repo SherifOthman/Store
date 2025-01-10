@@ -1,7 +1,10 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Store.Application.Fetures.Usres.Commands.Login;
+using Store.Application.Fetures.Usres.Commands.RefreshTokens;
 using Store.Application.Fetures.Usres.Commands.Register;
+using Store.Application.Responses;
 using Store.Domain.Entities.Orders;
 using System.Diagnostics;
 
@@ -18,32 +21,48 @@ public class AuthController : ApiController
 
     [HttpPost("Login")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<LoginCommandResponse>> Login([FromBody] LoginCommand request)
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    public async Task<ActionResult<TokenResponse>> Login([FromBody] LoginCommand request)
     {
         var response = await _mediator.Send(request, HttpContext.RequestAborted);
 
-        if (!response.IsSuccess)
+        if (response.IsFaliure)
         {
-            return Unauthorized(new { Error = response.Message });
+            HandleUnauthorized(response);
         }
 
         return Ok(response.Value);
     }
 
     [HttpPost("Register")]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public async Task<IActionResult> Register([FromBody] RegisterCommand request)
     {
         var response = await _mediator.Send(request, HttpContext.RequestAborted);
 
-        if (!response.IsSuccess)
+
+        if (response.IsFaliure)
         {
-            return HandleFailure(response);
+            HandleUnauthorized(response);
         }
 
         return NoContent();
+    }
+
+    [HttpPost("RfreshToken/{token}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    public async Task<ActionResult<TokenResponse>> RefreshToken(string token)
+    {
+        var response = await _mediator.Send(new RefreshTokenCommand(token));
+
+        if (response.IsFaliure)
+        {
+            HandleUnauthorized(response);
+        }
+
+        return Ok(response.Value);
     }
 
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Store.Dal.Repositories;
@@ -19,31 +20,24 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
         this.context = context;
     }
 
-    public async Task<TEntity?> GetAsync(int id)
+    public async Task<TEntity?> GetAsync(int id, CancellationToken cancellationToken)
     {
         return await context.Set<TEntity>().FindAsync(id);
     }
 
-    public async Task<IEnumerable<TEntity>> GetAllAsync()
+    public async Task<IEnumerable<TEntity>> GetAllAsync(CancellationToken cancellationToken)
     {
-        return await context.Set<TEntity>().ToListAsync();
+        return await context.Set<TEntity>().ToListAsync(cancellationToken);
     }
 
-    public async Task<IEnumerable<TEntity>> Find(Expression<Func<TEntity, bool>> predicate)
+    public virtual async Task AddAsync(TEntity entity, CancellationToken cancellationToken)
     {
-        return await context.Set<TEntity>()
-            .Where(predicate)
-            .ToListAsync();
+        await context.Set<TEntity>().AddAsync(entity, cancellationToken);
     }
 
-    public virtual async Task AddAsync(TEntity entity)
+    public virtual async Task AddRangeAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken)
     {
-        await context.Set<TEntity>().AddAsync(entity);
-    }
-
-    public virtual async Task AddRangeAsync(IEnumerable<TEntity> entities)
-    {
-        await context.Set<TEntity>().AddRangeAsync(entities);
+        await context.Set<TEntity>().AddRangeAsync(entities, cancellationToken);
     }
 
     public virtual void Remove(TEntity entity)

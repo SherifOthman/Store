@@ -1,5 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Http.HttpResults;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Store.Api.Responses;
 using Store.Application.Responses;
@@ -10,34 +9,47 @@ namespace Store.Api.Controllers;
 [ApiController]
 public abstract class ApiController : ControllerBase
 {
-    protected BadRequestObjectResult HandleFailure(BaseResult result)
+    protected UnauthorizedObjectResult HandleUnauthorized(BaseResult result)
     {
-        if (result.IsSuccess)
-            throw new InvalidOperationException(
-                $"Ivalid operation because requst is already successful {nameof(result)}");
+        EnsureFailure(result);
+        var problemDetails = CreateProblemDetails(result, HttpStatusCode.Unauthorized, "Access was denied.");
+        return Unauthorized(problemDetails);
+    }
 
-        var problemDetails = GetProblemDetailsFromResult(result);
-
+    protected BadRequestObjectResult HandleBadRequest(BaseResult result)
+    {
+        EnsureFailure(result);
+        var problemDetails = CreateProblemDetails(result, HttpStatusCode.BadRequest, "One or more validation errors occurred.");
         return BadRequest(problemDetails);
     }
 
+    private void EnsureFailure(BaseResult result)
+    {
+        if (result.IsSuccess)
+        {
+            throw new InvalidOperationException(
+                $"Invalid operation because the request was already successful: {nameof(result)}");
+        }
+    }
 
-    private ProblemDetails GetProblemDetailsFromResult(BaseResult result)
+    private ProblemDetails CreateProblemDetails(BaseResult result, HttpStatusCode statusCode, string? defaultDetail = null)
     {
         var problemDetails = new ProblemDetails
         {
             Title = result.Message ?? "No specific errors provided.",
-            Status = (int)HttpStatusCode.BadRequest,
+            Status = (int)statusCode,
             Instance = HttpContext.Request.Path,
         };
 
         if (result.Errors != null)
         {
-            problemDetails.Detail = "One or more validation errors occurred.";
             problemDetails.Extensions["errors"] = result.Errors;
+
+            if (defaultDetail != null)
+                problemDetails.Detail = defaultDetail;
+
         }
 
         return problemDetails;
     }
-
 }

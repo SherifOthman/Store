@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Store.Application.Contracts.Infrastructure;
+namespace Store.Application.Contracts.Infrastructure.UserManager;
 public interface IPasswordHasher
 {
-    string HashPassword(string password);
+     string HashPassword(string password);
 
     bool VerifyPassword(string password, string hashedPassword);
 }

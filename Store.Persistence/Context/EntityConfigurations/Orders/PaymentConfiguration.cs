@@ -20,13 +20,17 @@ internal class PaymentConfiguration : IEntityTypeConfiguration<Payment>
             .HasConversion<int>();
 
         builder.HasOne(x => x.Order)
-            .WithOne(x=>x.Payment)
+            .WithOne(x => x.Payment)
             .HasForeignKey<Payment>(x => x.OrderId)
             .OnDelete(DeleteBehavior.Restrict);
 
         builder.HasIndex(x => x.OrderId)
             .IsUnique();
 
+        builder.HasQueryFilter(builder => !builder.Order.User.IsDeleted);
+
         builder.ToTable("Payments");
     }
+
+ 
 }

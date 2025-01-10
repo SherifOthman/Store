@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Store.Application.Contracts.Infrastructure;
+using Store.Application.Contracts.Infrastructure.UserManager;
 using Store.Domain.Entities.Users;
 
 

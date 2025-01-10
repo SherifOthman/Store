@@ -9,10 +9,10 @@ namespace Store.Domain.Abstractions.Repositories;
 
 public interface IRepository<TEntity> where TEntity : class
 {
-    Task<TEntity?> GetAsync(int id);
-    Task<IEnumerable<TEntity>> GetAllAsync();
-    Task AddAsync(TEntity entity);
-    Task AddRangeAsync(IEnumerable<TEntity> entities);
+    Task<TEntity?> GetAsync(int id, CancellationToken token);
+    Task<IEnumerable<TEntity>> GetAllAsync(CancellationToken token);
+    Task AddAsync(TEntity entity, CancellationToken token);
+    Task AddRangeAsync(IEnumerable<TEntity> entities, CancellationToken token);
     void Remove(TEntity entity);
     void RemoveRange(IEnumerable<TEntity> entities);
 }

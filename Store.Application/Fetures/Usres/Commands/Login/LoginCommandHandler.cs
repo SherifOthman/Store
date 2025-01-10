@@ -1,40 +1,45 @@
 ﻿using AutoMapper;
 using MediatR;
-using Store.Application.Contracts.Infrastructure;
 using Store.Application.Contracts.Infrastructure.Authentication;
-using Store.Application.Contracts.Persistence;
-using Store.Application.Exceptions;
+using Store.Application.Contracts.Infrastructure.UserManager;
+using Store.Application.Fetures.Usres.Commands.Login;
 using Store.Application.Responses;
 
-namespace Store.Application.Fetures.Usres.Commands.Login;
-public class LoginCommandHandler : IRequestHandler<LoginCommand, Result<LoginCommandResponse>>
-{
-    private readonly IUnitOfWork _unitOfWork;
-    private readonly IJwtProvider _jwtProvider;
-    private readonly IPasswordHasher _passwordHasher;
+namespace Store.Application.Features.Users.Commands.Login;
 
-    public LoginCommandHandler(IMapper mapper, IUnitOfWork unitOfWork,
-        IJwtProvider jwtProvider, IPasswordHasher passwordHasher)
+public class LoginCommandHandler : IRequestHandler<LoginCommand, Result<TokenResponse>>
+{
+    private readonly IJwtProvider _jwtProvider;
+    private readonly ILoggedInService _loggedInService;
+    private readonly IUserManager _userManager;
+
+    public LoginCommandHandler(
+        IJwtProvider jwtProvider,
+        ILoggedInService loggedInService,
+        IUserManager userManager)
     {
-        _unitOfWork = unitOfWork;
         _jwtProvider = jwtProvider;
-        _passwordHasher = passwordHasher;
+        _loggedInService = loggedInService;
+        _userManager = userManager;
     }
 
-
-    public async Task<Result<LoginCommandResponse>> Handle(LoginCommand request, CancellationToken cancellationToken)
+    public async Task<Result<TokenResponse>> Handle(LoginCommand request, CancellationToken cancellationToken)
     {
-        var user = await _unitOfWork.Users.GetByEmailAsync(request.Email);
 
-        if (user == null || !_passwordHasher.VerifyPassword(request.Password, user.PasswordHashed))
-            return Result<LoginCommandResponse>.FailureWithMessage("Invalid email or password");
+        var user = await _userManager.GetByEmailAsync(request.Email, cancellationToken);
+        if (user == null || !_userManager.ValidatePassword(user, request.Password))
+            return Result<TokenResponse>.FailureWithMessage("Invalid email or password");
 
+     
         var accessToken = _jwtProvider.GenerateAccessToken(user);
         var refreshToken = _jwtProvider.GenerateRefreshToken();
 
 
+        await _userManager.RevokeRefreshTokensByIpAddressAsync(_loggedInService.IpAddress!, cancellationToken);
+        await _userManager.AssignRefreshTokenToUserAsync(user, refreshToken.Token, refreshToken.ExpiresIn, _loggedInService.IpAddress!, cancellationToken);
+        
 
-        return new LoginCommandResponse
+        var response = new TokenResponse
         {
             AccessToken = accessToken.Token,
             ExpiresIn = accessToken.ExpiresIn,
@@ -42,6 +47,6 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, Result<LoginCom
             RefreshTokenExpiresIn = refreshToken.ExpiresIn
         };
 
+        return response;
     }
-
 }

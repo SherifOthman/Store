@@ -4,16 +4,20 @@ using Scalar.AspNetCore;
 using Serilog;
 using Store.Api;
 using Store.Api.Middlewares;
+using Store.Api.OpenApiTransformers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.UseSerilog((context, loggerConfiguration) =>
 {
-    loggerConfiguration.ReadFrom.Configuration(context.Configuration); 
+    loggerConfiguration.ReadFrom.Configuration(context.Configuration);
 });
 
 builder.Services.AddControllers();
-builder.Services.AddOpenApi();
+builder.Services.AddOpenApi("v1", options =>
+{
+    options.AddDocumentTransformer<BearerSecuritySchemeTransformer>();
+});
 builder.Services.RegisterAppServices(builder.Configuration);
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer();

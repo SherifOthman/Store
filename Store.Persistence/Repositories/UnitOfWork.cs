@@ -15,28 +15,24 @@ public class UnitOfWork : IUnitOfWork
     private readonly AppDbContext _context;
     private readonly Dictionary<Type, object> _repositories = new Dictionary<Type, object>();
 
-    public IUserRepository Users => field ?? new UserRepository(_context);
-    public IRoleRepository Roles => field ?? new RoleRepository(_context);
-
+    public IRoleRepository Roles => field ??= new RoleRepository(_context);
+    public IRefreshTokenRepository RefreshTokens => field ??= new RefreshTokenRepository(_context);
 
     public UnitOfWork(AppDbContext context)
     {
         _context = context;
-        Users = null!;
         Roles = null!;
+        RefreshTokens = null!;
     }
 
-
-    public Task<int> CompleteAsync()
+    public Task<int> CompleteAsync(CancellationToken token)
     {
-        return _context.SaveChangesAsync();
+        return _context.SaveChangesAsync(token);
     }
-
     public ValueTask DisposeAsync()
     {
         return _context.DisposeAsync();
     }
-
     public IRepository<TEntity> GetRepository<TEntity>() where TEntity : class
     {
         if (typeof(User).IsAssignableFrom(typeof(TEntity)))
