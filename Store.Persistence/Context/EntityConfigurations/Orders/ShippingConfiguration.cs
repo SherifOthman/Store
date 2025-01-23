@@ -16,6 +16,9 @@ internal class ShippingConfiguration : IEntityTypeConfiguration<Shipping>
     {
         builder.HasKey(x => x.Id);
 
+        builder.Property(x => x.Id)
+           .ValueGeneratedNever();
+
         builder.Property(x => x.Method)
             .HasConversion<int>();
 
@@ -25,11 +28,6 @@ internal class ShippingConfiguration : IEntityTypeConfiguration<Shipping>
         builder.HasOne(x => x.Order)
             .WithOne(x => x.Shipping)
             .HasForeignKey<Shipping>(x => x.OrderId)
-            .OnDelete(DeleteBehavior.Restrict);
-
-        builder.HasOne(x=>x.Address)
-            .WithMany()
-            .HasForeignKey(x => x.AddressId)
             .OnDelete(DeleteBehavior.Restrict);
 
         builder.HasIndex(x => x.OrderId)

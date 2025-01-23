@@ -6,29 +6,27 @@ using Store.Dal.Repositories;
 using Store.Domain.Entities.Users;
 
 namespace Store.Persistence.Repositories;
-public class RefreshTokenRepository : Repository<RefreshToken>, IRefreshTokenRepository
+public class RefreshTokenRepository : Repository<RefreshToken>, IRefreshTokenRpository
 {
     public RefreshTokenRepository(AppDbContext context) : base(context)
     {
 
     }
 
-    public Task<RefreshToken?> GetByTokenValue(string refreshTokenString, CancellationToken cancellationToken)
+    public Task<RefreshToken?> GetRefreshTokenByValue(string value, CancellationToken cancellationToken = default)
     {
         var refreshToken = context.RefreshTokens
-             .FirstOrDefaultAsync(r => r.Token == refreshTokenString);
+             .FirstOrDefaultAsync(r => r.Token == value);
 
         return refreshToken;
     }
 
-    public Task<RefreshToken?> GetByTokenValueWithUser(string refreshTokenString, CancellationToken cancellationToken)
+    public Task<int> RemoveInvalidTokens(CancellationToken cancellationToken = default)
     {
-        var refreshToken = context.RefreshTokens
-            .Include(r => r.User)
-            .FirstOrDefaultAsync(r => r.Token == refreshTokenString);
+        return context.RefreshTokens
+            .Where(r => r.IsRevoked || r.CreatedOn > DateTime.UtcNow)
+            .ExecuteDeleteAsync(cancellationToken);
 
-        return refreshToken;
 
     }
-
 }

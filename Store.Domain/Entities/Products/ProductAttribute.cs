@@ -1,10 +1,10 @@
-﻿using Store.Domain.Enums;
+﻿using Store.Domain.Common;
+using Store.Domain.Enums;
 
 namespace Store.Domain.Entities.Products;
 
-public class ProductAttribute
+public class ProductAttribute : Entity
 {
-    public int Id { get; set; }
     public required string Name { get; set; }
     public ProductAttributeDataType DataType { get; set; }
 }

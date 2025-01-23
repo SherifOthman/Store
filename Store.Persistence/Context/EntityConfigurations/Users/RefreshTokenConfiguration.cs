@@ -9,23 +9,20 @@ internal class RefreshTokenConfiguration : IEntityTypeConfiguration<RefreshToken
     {
         builder.HasKey(x => x.Id);
 
+        builder.Property(x => x.Id)
+           .ValueGeneratedNever();
+
         builder.Property(x => x.Token)
             .HasMaxLength(250);
 
-        builder.Property(x => x.CreatedByIp)
-            .HasMaxLength(50);
-
-        builder.Property(x => x.RevokedByIp)
-            .HasMaxLength(50);
-
-        builder.HasOne(x => x.User)
+        builder.HasOne<User>()
             .WithMany()
             .HasForeignKey(x => x.UserId)
             .OnDelete(DeleteBehavior.Cascade);
 
         builder.HasIndex(x => x.UserId);
 
-        builder.HasQueryFilter(x => !x.User.IsDeleted);
+       // builder.HasQueryFilter(x => !x.User.IsDeleted);
 
         builder.ToTable("RefreshTokens");
     }

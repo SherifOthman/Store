@@ -14,9 +14,9 @@ namespace Store.Infrastructure.Authentication;
 internal sealed class JwtProvider : IJwtProvider
 {
     private readonly JwtOptions _options;
-    public JwtProvider(IOptionsMonitor<JwtOptions> options)
+    public JwtProvider(IOptions<JwtOptions> options)
     {
-        _options = options.CurrentValue;
+        _options = options.Value;
     }
 
     public TokenVm GenerateAccessToken(User user)

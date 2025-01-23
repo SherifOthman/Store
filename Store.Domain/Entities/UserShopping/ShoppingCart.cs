@@ -1,12 +1,10 @@
-﻿using Store.Domain.Entities.Users;
-using System.Collections.ObjectModel;
+﻿using Store.Domain.Common;
 
 namespace Store.Domain.Entities.UserShopping;
 
-public class ShoppingCart
+public class ShoppingCart : Entity
 {
-    public int Id { get; set; }
-    public int UserId { get; set; }
+    public Guid UserId { get; set; }
     public ICollection<ShoppingCartItem>? Items { get; set; }
 
 }

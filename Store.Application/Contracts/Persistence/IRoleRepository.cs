@@ -5,5 +5,5 @@ using Store.Domain.Entities.Users;
 namespace Store.Application.Contracts.Persistence;
 public interface IRoleRepository : IRepository<Role>
 {
-    Task<Role?> GetByNameAsync(string RoleName, CancellationToken token);
+    Task<Role?> GetByNameAsync(string name, CancellationToken cancellationToken = default);
 }

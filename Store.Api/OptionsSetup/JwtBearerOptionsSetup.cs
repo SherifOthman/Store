@@ -10,13 +10,17 @@ public class JwtBearerOptionsSetup : IConfigureOptions<JwtBearerOptions>
 {
     private readonly JwtOptions _jwtOptions;
 
-    public JwtBearerOptionsSetup(IOptionsMonitor<JwtOptions> optionsMonitor)
+    public JwtBearerOptionsSetup(IOptions<JwtOptions> options)
     {
-        _jwtOptions = optionsMonitor.CurrentValue;
+        _jwtOptions = options.Value;
     }
 
     public void Configure(JwtBearerOptions options)
     {
+        Console.WriteLine($"Issuer: {_jwtOptions.Issuer}");
+        Console.WriteLine($"Audience: {_jwtOptions.Audience}");
+        Console.WriteLine($"SecurityKey: {_jwtOptions.SecurityKey}");
+
         options.TokenValidationParameters = new()
         {
             ValidateIssuer = true,

@@ -1,8 +1,9 @@
-﻿namespace Store.Domain.Entities.Promotions;
+﻿using Store.Domain.Common;
 
-public class DiscountType
+namespace Store.Domain.Entities.Promotions;
+
+public class DiscountType: Entity
 {
-    public int Id { get; set; }
     public required string Name { get; set; }
 }
 

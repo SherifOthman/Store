@@ -1,12 +1,13 @@
-﻿namespace Store.Domain.Entities.Products;
+﻿using Store.Domain.Common;
 
-public class ProductInventoryImage
+namespace Store.Domain.Entities.Products;
+
+public class ProductInventoryImage : Entity
 {
-    public int Id { get; set; }
-    public int ProductInventoryId { get; set; }
-    public ProductInventory productInventory { get; set; } = null!;
+    public Guid ProductInventoryId { get; set; }
     public string? ImagePath { get; set; }
     public int DisplayOreder { get; set; }
+   
 }
 
 

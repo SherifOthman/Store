@@ -11,6 +11,9 @@ internal class ShoppingCartConfiguration : IEntityTypeConfiguration<ShoppingCart
     {
         builder.HasKey(x => x.Id);
 
+        builder.Property(x => x.Id)
+           .ValueGeneratedNever();
+
         builder.HasOne<User>()
              .WithOne()
              .HasForeignKey<ShoppingCart>(x => x.UserId);

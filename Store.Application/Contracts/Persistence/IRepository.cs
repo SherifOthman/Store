@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Store.Domain.Abstractions.Repositories;
+﻿namespace Store.Domain.Abstractions.Repositories;
 
 public interface IRepository<TEntity> where TEntity : class
 {
-    Task<TEntity?> GetAsync(int id, CancellationToken token);
-    Task<IEnumerable<TEntity>> GetAllAsync(CancellationToken token);
-    Task AddAsync(TEntity entity, CancellationToken token);
-    Task AddRangeAsync(IEnumerable<TEntity> entities, CancellationToken token);
-    void Remove(TEntity entity);
-    void RemoveRange(IEnumerable<TEntity> entities);
+    Task<TEntity?> GetAsync(Guid id, CancellationToken cancellationToken = default);
+    Task<IEnumerable<TEntity>> GetAllAsync(CancellationToken cancellationToken = default);
+    Task AddAsync(TEntity entity, CancellationToken cancellationToken = default);
+    Task AddRangeAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default);
+    Task UpdateAsync(TEntity entity, CancellationToken cancellationToken = default);
+    Task UpdateRangeAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default);
+    Task RemoveAsync(TEntity entity, CancellationToken cancellationToken = default);
+    Task RemoveRangeAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default);
+
+
 }

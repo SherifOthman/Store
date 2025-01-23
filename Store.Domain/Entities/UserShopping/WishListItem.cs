@@ -5,8 +5,8 @@ namespace Store.Domain.Entities.UserShopping;
 
 public class WishListItem
 {
-    public int WishListId { get; set; }
-    public int ProductInventoryId { get; set; }
+    public Guid WishListId { get; set; }
+    public Guid ProductInventoryId { get; set; }
     public ProductInventory ProductInventory { get; set; } = null!;
 }
 

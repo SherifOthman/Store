@@ -8,7 +8,10 @@ public class CouponConfiguration : IEntityTypeConfiguration<Coupon>
 {
     public void Configure(EntityTypeBuilder<Coupon> builder)
     {
-        builder.HasKey(x => x.Id);
+        builder.HasKey(x => x.Id); 
+
+        builder.Property(x => x.Id)
+            .ValueGeneratedNever();
 
         builder.Property(x => x.Name)
             .HasMaxLength(50);

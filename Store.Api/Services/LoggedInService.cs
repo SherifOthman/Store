@@ -13,13 +13,13 @@ public class LoggedInService : ILoggedInService
         _contextAccessor = contextAccessor;
     }
 
-    public int UserId
+    public Guid UserId
     {
         get
         {
             var indentifer = _contextAccessor.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            if (!int.TryParse(indentifer, out int userId))
+            if (!Guid.TryParse(indentifer, out Guid userId))
             {
                 throw new InvalidOperationException("User identifier is missing or invalid.");
             }
@@ -28,11 +28,4 @@ public class LoggedInService : ILoggedInService
         }
     }
 
-    public string? IpAddress
-    {
-        get
-        {
-           return _contextAccessor.HttpContext?.GetClientApiAddress();
-        }
-    }
 }

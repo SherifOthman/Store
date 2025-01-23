@@ -1,16 +1,13 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Store.Application.Fetures.Usres.Commands.Login;
-using Store.Application.Fetures.Usres.Commands.RefreshTokens;
-using Store.Application.Fetures.Usres.Commands.Register;
+using Store.Application.Features.Users.Commands.Login;
+using Store.Application.Features.Usres.Commands.RefreshTokens;
 using Store.Application.Responses;
-using Store.Domain.Entities.Orders;
-using System.Diagnostics;
 
 namespace Store.Api.Controllers;
 [Route("api/auth")]
-public class AuthController : ApiController
+[ApiController]
+public class AuthController : ControllerBase
 {
     private readonly IMediator _mediator;
 
@@ -26,12 +23,12 @@ public class AuthController : ApiController
     {
         var response = await _mediator.Send(request, HttpContext.RequestAborted);
 
-        if (response.IsFaliure)
+        if (response.Error)
         {
-            HandleUnauthorized(response);
+            return BadRequest(response);
         }
 
-        return Ok(response.Value);
+        return Ok(response);
     }
 
     [HttpPost("Register")]
@@ -41,10 +38,9 @@ public class AuthController : ApiController
     {
         var response = await _mediator.Send(request, HttpContext.RequestAborted);
 
-
-        if (response.IsFaliure)
+        if (response.Error)
         {
-            HandleUnauthorized(response);
+            return BadRequest(response);
         }
 
         return NoContent();
@@ -57,12 +53,12 @@ public class AuthController : ApiController
     {
         var response = await _mediator.Send(new RefreshTokenCommand(token));
 
-        if (response.IsFaliure)
+        if (response.Error)
         {
-            HandleUnauthorized(response);
+            return BadRequest(response);
         }
 
-        return Ok(response.Value);
+        return Ok(response);
     }
 
 }

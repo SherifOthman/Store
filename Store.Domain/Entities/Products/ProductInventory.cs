@@ -5,23 +5,16 @@ namespace Store.Domain.Entities.Products;
 
 public class ProductInventory : TrackedEntity
 {
-    public int Id { get; set; }
-    public int ProductId { get; set; }
+    public Guid Id { get; set; }
+    public Guid ProductId { get; set; }
     public Product? Product { get; set; }
-    public bool IsActive { get; set; }
     public bool IsDigital { get; set; }
     public decimal Price { get; set; }
     public float Weight { get; set; }
-    public int UnitsInStock { get; set; }   
+    public int UnitsInStock { get; set; }
 
-    public Collection<ProductInventoryImage>? InventoryImages { get; set; }
-    public Collection<ProductAttributeValue>? AttributeValues { get; set; }
-
-    public ProductInventory()
-    {
-        IsActive = true;
-        IsDigital = false;
-    }
+    public List<ProductInventoryImage> InventoryImages { get; set; } = new();
+    public List<ProductAttributeValue> AttributeValues { get; set; } = new();
 }
 
 

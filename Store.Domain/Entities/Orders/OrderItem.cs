@@ -1,16 +1,12 @@
-﻿using Store.Domain.Entities.Products;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Store.Domain.Common;
+using Store.Domain.Entities.Products;
 
 namespace Store.Domain.Entities.Orders;
 
-public class OrderItem
+public class OrderItem : Entity
 {
-    public int OrderId { get; set; }
-    public int ProductInventoryId { get; set; }
+    public Guid OrderId { get; set; }
+    public Guid ProductInventoryId { get; set; }
     public ProductInventory ProductInventory { get; set; } = null!;
     public int Quantity { get; set; }
     public decimal Price { get; set; }

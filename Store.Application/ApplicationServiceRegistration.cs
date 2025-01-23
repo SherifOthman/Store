@@ -1,5 +1,5 @@
-﻿
-using FluentValidation;
+﻿using FluentValidation;
+using Mapster;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Store.Application.Behaviors;
@@ -14,12 +14,13 @@ public static class ApplicationServiceRegistration
         services.AddMediatR(cfg => 
         cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
 
-        services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+        services.AddMapster();
         services.AddValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
 
      //   services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviorForResult<,>));
         services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingPipeLineBehavior<,>));
         services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+
 
         return services;
     }

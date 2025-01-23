@@ -10,6 +10,9 @@ internal class BrandConfiguration : IEntityTypeConfiguration<Brand>
     {
         builder.HasKey(x => x.Id);
 
+        builder.Property(x => x.Id)
+           .ValueGeneratedNever();
+
         builder.Property(x => x.Name)
             .HasMaxLength(100);
 

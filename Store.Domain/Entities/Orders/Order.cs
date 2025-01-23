@@ -1,12 +1,12 @@
-﻿using Store.Domain.Entities.Users;
+﻿using Store.Domain.Common;
+using Store.Domain.Entities.Users;
 using Store.Domain.Enums;
 
 namespace Store.Domain.Entities.Orders;
 
-public class Order
+public class Order : Entity
 {
-    public int Id { get; set; }
-    public int UserId { get; set; }
+    public Guid UserId { get; set; }
     public User User { get; set; } = null!;
     public DateTime OrderDate { get; private set; }
     public decimal TotalAmount { get; set; }

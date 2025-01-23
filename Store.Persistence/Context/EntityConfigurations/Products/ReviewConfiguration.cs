@@ -11,6 +11,9 @@ internal class ReviewConfiguration : IEntityTypeConfiguration<Review>
 
         builder.HasKey(x => x.Id);
 
+        builder.Property(x => x.Id)
+           .ValueGeneratedNever();
+
         builder.Property(x => x.Comment)
             .HasMaxLength(1000);
 

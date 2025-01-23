@@ -1,15 +1,14 @@
-﻿using Store.Domain.Entities.Users;
+﻿using Store.Domain.Common;
+using Store.Domain.Entities.Users;
 using Store.Domain.Enums;
 
 namespace Store.Domain.Entities.Orders;
 
-public class Shipping
+public class Shipping : Entity
 {
-    public int Id { get; set; }
-    public int OrderId { get; set; }
+    public Guid OrderId { get; set; }
     public Order Order { get; set; } = null!;
     public int AddressId { get; set; }
-    public Address Address { get; set; } = null!;
     public ShippingStatus Status { get; set; }
     public ShippingMethod Method { get; set; }
     public DateTime ShippedDate { get; private set; }

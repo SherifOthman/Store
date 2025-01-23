@@ -1,11 +1,11 @@
-﻿using Store.Domain.Enums;
+﻿using Store.Domain.Common;
+using Store.Domain.Enums;
 
 namespace Store.Domain.Entities.Orders;
 
-public class Payment
+public class Payment : Entity
 {
-    public int Id { get; set; }
-    public int OrderId { get; set; }
+    public Guid OrderId { get; set; }
     public Order Order { get; set; } = null!;
     public decimal Amount { get; set; }
     public PaymentMethod Method { get; set; }

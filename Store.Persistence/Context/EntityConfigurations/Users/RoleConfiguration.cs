@@ -12,30 +12,17 @@ internal class RoleConfiguration : IEntityTypeConfiguration<Role>
     {
         builder.HasKey(x => x.Id);
 
+        builder.Property(x => x.Id)
+           .ValueGeneratedNever();
+
         builder.Property(x => x.Name)
             .HasMaxLength(30);
 
-        builder.HasMany(r => r.Users)
+        builder.HasMany<User>()
             .WithMany(u => u.Roles)
             .UsingEntity<UserRole>();
 
         builder.ToTable("Roles");
-
-        builder.HasData(GetInitialData());
     }
 
-    private List<Role> GetInitialData()
-    {
-        return new List<Role>
-        {
-            new () {
-                Id = 1,
-                Name = RoleValues.Admin
-            },
-             new (){
-                Id = 2,
-                Name = RoleValues.Customer
-            },
-        };
-    }
 }

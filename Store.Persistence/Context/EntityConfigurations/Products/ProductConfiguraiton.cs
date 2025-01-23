@@ -5,13 +5,16 @@ using Store.Infrastructure.Context.EntityConfigurations.Common;
 
 namespace Store.Dal.Context.Config.Products;
 
-internal class ProductConfiguraiton : AduitableEntityConfiguration<Product>
+internal class ProductConfiguraiton : TrackedEntityConfiguration<Product>
 {
     public override void Configure(EntityTypeBuilder<Product> builder)
     {
         base.Configure(builder);
 
         builder.HasKey(x => x.Id);
+
+        builder.Property(x => x.Id)
+           .ValueGeneratedNever();
 
         builder.Property(x => x.Name)
             .HasMaxLength(500);
@@ -32,7 +35,7 @@ internal class ProductConfiguraiton : AduitableEntityConfiguration<Product>
         builder.HasIndex(x => x.BrandId);
         builder.HasIndex(x => x.CategoryId);
 
-        builder.HasQueryFilter(x => !x.CreatedBy.IsDeleted);
+      //  builder.HasQueryFilter(x => !x.CreatedBy.IsDeleted);
 
         builder.ToTable("Products");
     }

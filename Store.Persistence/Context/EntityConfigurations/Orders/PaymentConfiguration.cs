@@ -10,6 +10,9 @@ internal class PaymentConfiguration : IEntityTypeConfiguration<Payment>
     {
         builder.HasKey(x => x.Id);
 
+        builder.Property(x => x.Id)
+           .ValueGeneratedNever();
+
         builder.Property(x => x.Amount)
             .HasColumnType("decimal(10,2)");
 

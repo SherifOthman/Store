@@ -16,6 +16,9 @@ internal class OrderConfiguration : IEntityTypeConfiguration<Order>
     {
         builder.HasKey(x => x.Id);
 
+        builder.Property(x => x.Id)
+           .ValueGeneratedNever();
+
 
         builder.Property(x => x.TotalAmount)
            .HasColumnType("decimal(10,2)");

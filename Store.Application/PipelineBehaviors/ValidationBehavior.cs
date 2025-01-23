@@ -2,6 +2,8 @@
 using MediatR;
 using Store.Application.Extentions;
 using Store.Application.Responses;
+using System;
+using System.Reflection;
 
 namespace Store.Application.Behaviors;
 public class ValidationBehavior<TRequset, TResponse> : IPipelineBehavior<TRequset, TResponse>
@@ -26,7 +28,13 @@ public class ValidationBehavior<TRequset, TResponse> : IPipelineBehavior<TRequse
             var MappedInvalidValidationResults = validationResults.Where(v => !v.IsValid).ToValidationErrorMap();
 
             if (MappedInvalidValidationResults.Any())
-                return CreateFailureResponse(MappedInvalidValidationResults);
+            {
+                if (typeof(TResponse).IsGenericType
+                    && typeof(TResponse).GetGenericTypeDefinition() == typeof(Response<>))
+
+                    return CreateFailureResponse(MappedInvalidValidationResults);
+
+            }
         }
 
         return await next();
@@ -34,45 +42,14 @@ public class ValidationBehavior<TRequset, TResponse> : IPipelineBehavior<TRequse
 
     private static TResponse CreateFailureResponse(IDictionary<string, string[]> validationErrors)
     {
-        // Handle `Result<T>` responses
-        if (typeof(TResponse).IsGenericType &&
-            typeof(TResponse).GetGenericTypeDefinition() == typeof(Result<>))
-        {
+        var genricArg = typeof(TResponse).GetGenericArguments()[0];
+        var failMethod = typeof(Response).GetMethod("Fail");
+        var faliMethodWithGenricArg = failMethod!.MakeGenericMethod (genricArg);
 
-            // Use reflection to create an instance of `Result<T>`
-            var resultType = typeof(TResponse).GetGenericArguments()[0];
-            var genericResultType = typeof(Result<>).MakeGenericType(resultType);
+        return (TResponse)faliMethodWithGenricArg.Invoke(
+            null, new object[] { "Validation failed", validationErrors })!;
 
-            // Handling by creaeting instance
-
-            var result = Activator.CreateInstance(genericResultType) as BaseResult;
-
-            if (result != null)
-            {
-                result.IsSuccess = false;
-                result.Message = "Validation Error";
-                result.Errors = validationErrors;
-            }
-
-            return (TResponse)(object)result!;
-
-            // Handling by method
-
-            //var failureConstructor = genericResultType.GetMethod(nameof(BaseResult.FailureWithErrors));
-            //if (failureConstructor != null)
-            //{
-            //    return (TResponse)failureConstructor.Invoke(null, new object[] { validationErrors });
-            //}
-        }
-
-
-        // Handle `Result` (non-generic) responses
-        if (typeof(TResponse) == typeof(BaseResult))
-        {
-            return (TResponse)(object)BaseResult.FailureWithErrors(validationErrors);
-        }
-
-        throw new Exceptions.ValidationException(validationErrors);
     }
+
 
 }

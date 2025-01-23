@@ -1,19 +1,23 @@
-﻿
-using Store.Domain.Entities.Users;
+﻿using System;
 
 namespace Store.Domain.Common;
-public class TrackedEntity
+
+public abstract class TrackedEntity
 {
-    public int CreatedByUserId { get; set; }
-    public User CreatedBy { get; set; } = null!;
+    public Guid CreatedByUserId { get; set; }
     public DateTime CreatedOn { get; set; }
-    public int? LastModifiedByUserId { get; set; }
-    public User? LastModifiedBy { get; set; }
-    public DateTime? LastModifiedOn { get; set; }
-
-
-    public TrackedEntity()
+    public Guid? LastModifiedByUserId
     {
-        CreatedOn = DateTime.UtcNow;
+        get
+        {
+            return field;
+        }
+        set
+        {
+            field = value;
+            LastModifiedOn = DateTime.UtcNow;
+        }
     }
+    public DateTime? LastModifiedOn { get; private set; }
+
 }

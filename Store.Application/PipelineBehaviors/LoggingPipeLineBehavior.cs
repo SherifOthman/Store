@@ -4,7 +4,7 @@ using Store.Application.Responses;
 
 namespace Store.Application.PipelineBehaviors;
 internal class LoggingPipeLineBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-where TRequest : IRequest<TResponse>
+    where TRequest : IRequest<TResponse>
 {
     private readonly ILogger<LoggingPipeLineBehavior<TRequest, TResponse>> _logger;
 
@@ -16,36 +16,37 @@ where TRequest : IRequest<TResponse>
     public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
     {
         _logger.LogInformation(
-            "Proccessing Request {@RequestName}, {@DateTimeUtc}",
+            "Processing Request {@RequestName}, {@DateTimeUtc}",
             typeof(TRequest).Name,
             DateTime.UtcNow);
 
         var result = await next();
 
-        if (result is BaseResult baseResult)
+        if (result is Response<object> response)
         {
-            if (baseResult.IsFaliure)
+            if (response.Error) 
             {
                 _logger.LogError(
                     "Request {@RequestName} failed with error: {@Error}, at {@DateTimeUtc}",
                     typeof(TRequest).Name,
-                    baseResult.Message,
+                    response.Message,
                     DateTime.UtcNow);
             }
             else
             {
                 _logger.LogInformation(
-               "Completed Request {@RequestName}, {@DateTimeUtc}",
-               typeof(TRequest).Name,
-               DateTime.UtcNow);
+                    "Completed Request {@RequestName}, {@DateTimeUtc}",
+                    typeof(TRequest).Name,
+                    DateTime.UtcNow);
             }
         }
         else
         {
+            // Log for non-Response results
             _logger.LogInformation(
-               "Completed Request {@RequestName}, {@DateTimeUtc}",
-               typeof(TRequest).Name,
-               DateTime.UtcNow);
+                "Completed Request {@RequestName}, {@DateTimeUtc}",
+                typeof(TRequest).Name,
+                DateTime.UtcNow);
         }
 
         return result;

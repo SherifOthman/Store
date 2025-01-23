@@ -1,13 +1,12 @@
-﻿
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Store.Application.Contracts.Infrastructure.UserManager;
 using Store.Application.Contracts.Persistence;
 using Store.Dal.Context;
-
+using Store.Dal.Repositories;
+using Store.Domain.Abstractions.Repositories;
 using Store.Persistence.Repositories;
-using Store.Persistence.UserManging;
+
 
 namespace Store.Persistence;
 public static class PersistenceServiceRegistration
@@ -23,8 +22,12 @@ public static class PersistenceServiceRegistration
 
         });
 
-        services.AddScoped<IUnitOfWork, UnitOfWork>();
-        services.AddScoped<IUserManager, UserManager>();
+        services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+        services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IRoleRepository, RoleRepository>();
+        services.AddScoped<IRefreshTokenRpository, RefreshTokenRepository>();
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
+ 
 
         return services;
     }

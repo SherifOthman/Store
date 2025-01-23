@@ -15,17 +15,22 @@ internal class CategoryConfiguration : IEntityTypeConfiguration<Category>
     {
         builder.HasKey(x => x.Id);
 
+        builder.Property(x => x.Id)
+           .ValueGeneratedNever();
+
         builder.Property(x => x.IsActive);
 
         builder.Property(x => x.Name)
             .HasMaxLength(100);
 
-        builder.HasOne(x => x.ParentCategory)
-            .WithMany(x => x.ChildCategories)
-            .HasForeignKey(x => x.ParentCategoryId)
+        builder.HasOne<Category>()
+            .WithMany(x => x.SubCategories)
+            .HasForeignKey(x => x.RootCategoryId)
             .OnDelete(DeleteBehavior.Restrict);
 
-        builder.HasIndex(x => x.ParentCategoryId);
+        builder.HasQueryFilter(x => x.IsActive);
+
+        builder.HasIndex(x => x.RootCategoryId);
 
         builder.ToTable("Categories");
     }

@@ -1,11 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
-using Store.Api.Responses;
-using Store.Application.Exceptions;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using System.Text.Json;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Store.Api.Middlewares
 {
@@ -41,20 +36,6 @@ namespace Store.Api.Middlewares
                 Status = (int)HttpStatusCode.InternalServerError,
                 Instance = context.Request.Path
             };
-
-            switch (exception)
-            {
-                case ValidationException validationException:
-                    problemDetails.Status = (int)HttpStatusCode.BadRequest;
-                    problemDetails.Title = "Validation Error";
-                    problemDetails.Detail = "One or more validation errors occurred.";
-                    problemDetails.Extensions["Errors"] =  validationException.ValidationErrors;
-                    break;
-
-                default:
-                    problemDetails.Title = "Unexcpected error occurd";               
-                    break;
-            }
 
             _logger.LogError("Unexcpected error occurd: {@ErrorMessage}", exception.Message);
 

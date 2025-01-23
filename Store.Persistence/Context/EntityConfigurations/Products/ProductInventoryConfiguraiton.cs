@@ -5,7 +5,7 @@ using Store.Infrastructure.Context.EntityConfigurations.Common;
 
 namespace Store.Dal.Context.Config.Products;
 
-internal class ProductInventoryConfiguraiton : AduitableEntityConfiguration<ProductInventory>
+internal class ProductInventoryConfiguraiton : TrackedEntityConfiguration<ProductInventory>
 {
     public override void Configure(EntityTypeBuilder<ProductInventory> builder)
     {
@@ -24,7 +24,7 @@ internal class ProductInventoryConfiguraiton : AduitableEntityConfiguration<Prod
 
         builder.HasIndex(x => x.ProductId);
 
-        builder.HasQueryFilter(x => !x.CreatedBy.IsDeleted);
+       // builder.HasQueryFilter(x => !x.CreatedBy.IsDeleted);
 
 
         builder.ToTable("ProductInventories");

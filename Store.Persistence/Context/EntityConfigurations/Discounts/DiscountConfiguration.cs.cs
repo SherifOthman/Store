@@ -10,6 +10,9 @@ public class DiscountConfiguration : IEntityTypeConfiguration<Discount>
     {
         builder.HasKey(x => x.Id);
 
+        builder.Property(x => x.Id)
+           .ValueGeneratedNever();
+
         builder.Property(x => x.Name)
             .HasMaxLength(50);
 
@@ -31,7 +34,7 @@ public class DiscountConfiguration : IEntityTypeConfiguration<Discount>
 
         builder.HasIndex(x => x.DiscountTypeId);
 
-        builder.HasQueryFilter(x => !x.ProductInventory.CreatedBy.IsDeleted);
+      //  builder.HasQueryFilter(x => !x.ProductInventory.CreatedBy.IsDeleted);
 
         builder.ToTable("Discounts");
 

@@ -22,2996 +22,10 @@ namespace Store.Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Store.Domain.Entities.Addresses.City", b =>
-                {
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("GovernorateId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("NameAr")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("NameEn")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("GovernorateId");
-
-                    b.ToTable("Cities", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            GovernorateId = 1,
-                            NameAr = "15 مايو",
-                            NameEn = "15 May"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            GovernorateId = 1,
-                            NameAr = "الازبكية",
-                            NameEn = "Al Azbakeyah"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            GovernorateId = 1,
-                            NameAr = "البساتين",
-                            NameEn = "Al Basatin"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            GovernorateId = 1,
-                            NameAr = "التبين",
-                            NameEn = "Tebin"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            GovernorateId = 1,
-                            NameAr = "الخليفة",
-                            NameEn = "El-Khalifa"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            GovernorateId = 1,
-                            NameAr = "الدراسة",
-                            NameEn = "El darrasa"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            GovernorateId = 1,
-                            NameAr = "الدرب الاحمر",
-                            NameEn = "Aldarb Alahmar"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            GovernorateId = 1,
-                            NameAr = "الزاوية الحمراء",
-                            NameEn = "Zawya al-Hamra"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            GovernorateId = 1,
-                            NameAr = "الزيتون",
-                            NameEn = "El-Zaytoun"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            GovernorateId = 1,
-                            NameAr = "الساحل",
-                            NameEn = "Sahel"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            GovernorateId = 1,
-                            NameAr = "السلام",
-                            NameEn = "El Salam"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            GovernorateId = 1,
-                            NameAr = "السيدة زينب",
-                            NameEn = "Sayeda Zeinab"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            GovernorateId = 1,
-                            NameAr = "الشرابية",
-                            NameEn = "El Sharabeya"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            GovernorateId = 1,
-                            NameAr = "مدينة الشروق",
-                            NameEn = "Shorouk"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            GovernorateId = 1,
-                            NameAr = "الظاهر",
-                            NameEn = "El Daher"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            GovernorateId = 1,
-                            NameAr = "العتبة",
-                            NameEn = "Ataba"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            GovernorateId = 1,
-                            NameAr = "القاهرة الجديدة",
-                            NameEn = "New Cairo"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            GovernorateId = 1,
-                            NameAr = "المرج",
-                            NameEn = "El Marg"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            GovernorateId = 1,
-                            NameAr = "عزبة النخل",
-                            NameEn = "Ezbet el Nakhl"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            GovernorateId = 1,
-                            NameAr = "المطرية",
-                            NameEn = "Matareya"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            GovernorateId = 1,
-                            NameAr = "المعادى",
-                            NameEn = "Maadi"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            GovernorateId = 1,
-                            NameAr = "المعصرة",
-                            NameEn = "Maasara"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            GovernorateId = 1,
-                            NameAr = "المقطم",
-                            NameEn = "Mokattam"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            GovernorateId = 1,
-                            NameAr = "المنيل",
-                            NameEn = "Manyal"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            GovernorateId = 1,
-                            NameAr = "الموسكى",
-                            NameEn = "Mosky"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            GovernorateId = 1,
-                            NameAr = "النزهة",
-                            NameEn = "Nozha"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            GovernorateId = 1,
-                            NameAr = "الوايلى",
-                            NameEn = "Waily"
-                        },
-                        new
-                        {
-                            Id = 28,
-                            GovernorateId = 1,
-                            NameAr = "باب الشعرية",
-                            NameEn = "Bab al-Shereia"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            GovernorateId = 1,
-                            NameAr = "بولاق",
-                            NameEn = "Bolaq"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            GovernorateId = 1,
-                            NameAr = "جاردن سيتى",
-                            NameEn = "Garden City"
-                        },
-                        new
-                        {
-                            Id = 31,
-                            GovernorateId = 1,
-                            NameAr = "حدائق القبة",
-                            NameEn = "Hadayek El-Kobba"
-                        },
-                        new
-                        {
-                            Id = 32,
-                            GovernorateId = 1,
-                            NameAr = "حلوان",
-                            NameEn = "Helwan"
-                        },
-                        new
-                        {
-                            Id = 33,
-                            GovernorateId = 1,
-                            NameAr = "دار السلام",
-                            NameEn = "Dar Al Salam"
-                        },
-                        new
-                        {
-                            Id = 34,
-                            GovernorateId = 1,
-                            NameAr = "شبرا",
-                            NameEn = "Shubra"
-                        },
-                        new
-                        {
-                            Id = 35,
-                            GovernorateId = 1,
-                            NameAr = "طره",
-                            NameEn = "Tura"
-                        },
-                        new
-                        {
-                            Id = 36,
-                            GovernorateId = 1,
-                            NameAr = "عابدين",
-                            NameEn = "Abdeen"
-                        },
-                        new
-                        {
-                            Id = 37,
-                            GovernorateId = 1,
-                            NameAr = "عباسية",
-                            NameEn = "Abaseya"
-                        },
-                        new
-                        {
-                            Id = 38,
-                            GovernorateId = 1,
-                            NameAr = "عين شمس",
-                            NameEn = "Ain Shams"
-                        },
-                        new
-                        {
-                            Id = 39,
-                            GovernorateId = 1,
-                            NameAr = "مدينة نصر",
-                            NameEn = "Nasr City"
-                        },
-                        new
-                        {
-                            Id = 40,
-                            GovernorateId = 1,
-                            NameAr = "مصر الجديدة",
-                            NameEn = "New Heliopolis"
-                        },
-                        new
-                        {
-                            Id = 41,
-                            GovernorateId = 1,
-                            NameAr = "مصر القديمة",
-                            NameEn = "Masr Al Qadima"
-                        },
-                        new
-                        {
-                            Id = 42,
-                            GovernorateId = 1,
-                            NameAr = "منشية ناصر",
-                            NameEn = "Mansheya Nasir"
-                        },
-                        new
-                        {
-                            Id = 43,
-                            GovernorateId = 1,
-                            NameAr = "مدينة بدر",
-                            NameEn = "Badr City"
-                        },
-                        new
-                        {
-                            Id = 44,
-                            GovernorateId = 1,
-                            NameAr = "مدينة العبور",
-                            NameEn = "Obour City"
-                        },
-                        new
-                        {
-                            Id = 45,
-                            GovernorateId = 1,
-                            NameAr = "وسط البلد",
-                            NameEn = "Cairo Downtown"
-                        },
-                        new
-                        {
-                            Id = 46,
-                            GovernorateId = 1,
-                            NameAr = "الزمالك",
-                            NameEn = "Zamalek"
-                        },
-                        new
-                        {
-                            Id = 47,
-                            GovernorateId = 1,
-                            NameAr = "قصر النيل",
-                            NameEn = "Kasr El Nile"
-                        },
-                        new
-                        {
-                            Id = 48,
-                            GovernorateId = 1,
-                            NameAr = "الرحاب",
-                            NameEn = "Rehab"
-                        },
-                        new
-                        {
-                            Id = 49,
-                            GovernorateId = 1,
-                            NameAr = "القطامية",
-                            NameEn = "Katameya"
-                        },
-                        new
-                        {
-                            Id = 50,
-                            GovernorateId = 1,
-                            NameAr = "مدينتي",
-                            NameEn = "Madinty"
-                        },
-                        new
-                        {
-                            Id = 51,
-                            GovernorateId = 1,
-                            NameAr = "روض الفرج",
-                            NameEn = "Rod Alfarag"
-                        },
-                        new
-                        {
-                            Id = 52,
-                            GovernorateId = 1,
-                            NameAr = "شيراتون",
-                            NameEn = "Sheraton"
-                        },
-                        new
-                        {
-                            Id = 53,
-                            GovernorateId = 1,
-                            NameAr = "الجمالية",
-                            NameEn = "El-Gamaleya"
-                        },
-                        new
-                        {
-                            Id = 54,
-                            GovernorateId = 1,
-                            NameAr = "العاشر من رمضان",
-                            NameEn = "10th of Ramadan City"
-                        },
-                        new
-                        {
-                            Id = 55,
-                            GovernorateId = 1,
-                            NameAr = "الحلمية",
-                            NameEn = "Helmeyat Alzaytoun"
-                        },
-                        new
-                        {
-                            Id = 56,
-                            GovernorateId = 1,
-                            NameAr = "النزهة الجديدة",
-                            NameEn = "New Nozha"
-                        },
-                        new
-                        {
-                            Id = 57,
-                            GovernorateId = 1,
-                            NameAr = "العاصمة الإدارية",
-                            NameEn = "Capital New"
-                        },
-                        new
-                        {
-                            Id = 58,
-                            GovernorateId = 2,
-                            NameAr = "الجيزة",
-                            NameEn = "Giza"
-                        },
-                        new
-                        {
-                            Id = 59,
-                            GovernorateId = 2,
-                            NameAr = "السادس من أكتوبر",
-                            NameEn = "Sixth of October"
-                        },
-                        new
-                        {
-                            Id = 60,
-                            GovernorateId = 2,
-                            NameAr = "الشيخ زايد",
-                            NameEn = "Cheikh Zayed"
-                        },
-                        new
-                        {
-                            Id = 61,
-                            GovernorateId = 2,
-                            NameAr = "الحوامدية",
-                            NameEn = "Hawamdiyah"
-                        },
-                        new
-                        {
-                            Id = 62,
-                            GovernorateId = 2,
-                            NameAr = "البدرشين",
-                            NameEn = "Al Badrasheen"
-                        },
-                        new
-                        {
-                            Id = 63,
-                            GovernorateId = 2,
-                            NameAr = "الصف",
-                            NameEn = "Saf"
-                        },
-                        new
-                        {
-                            Id = 64,
-                            GovernorateId = 2,
-                            NameAr = "أطفيح",
-                            NameEn = "Atfih"
-                        },
-                        new
-                        {
-                            Id = 65,
-                            GovernorateId = 2,
-                            NameAr = "العياط",
-                            NameEn = "Al Ayat"
-                        },
-                        new
-                        {
-                            Id = 66,
-                            GovernorateId = 2,
-                            NameAr = "الباويطي",
-                            NameEn = "Al-Bawaiti"
-                        },
-                        new
-                        {
-                            Id = 67,
-                            GovernorateId = 2,
-                            NameAr = "منشأة القناطر",
-                            NameEn = "ManshiyetAl Qanater"
-                        },
-                        new
-                        {
-                            Id = 68,
-                            GovernorateId = 2,
-                            NameAr = "أوسيم",
-                            NameEn = "Oaseem"
-                        },
-                        new
-                        {
-                            Id = 69,
-                            GovernorateId = 2,
-                            NameAr = "كرداسة",
-                            NameEn = "Kerdasa"
-                        },
-                        new
-                        {
-                            Id = 70,
-                            GovernorateId = 2,
-                            NameAr = "أبو النمرس",
-                            NameEn = "Abu Nomros"
-                        },
-                        new
-                        {
-                            Id = 71,
-                            GovernorateId = 2,
-                            NameAr = "كفر غطاطي",
-                            NameEn = "Kafr Ghati"
-                        },
-                        new
-                        {
-                            Id = 72,
-                            GovernorateId = 2,
-                            NameAr = "منشأة البكاري",
-                            NameEn = "Manshiyet Al Bakari"
-                        },
-                        new
-                        {
-                            Id = 73,
-                            GovernorateId = 2,
-                            NameAr = "الدقى",
-                            NameEn = "Dokki"
-                        },
-                        new
-                        {
-                            Id = 74,
-                            GovernorateId = 2,
-                            NameAr = "العجوزة",
-                            NameEn = "Agouza"
-                        },
-                        new
-                        {
-                            Id = 75,
-                            GovernorateId = 2,
-                            NameAr = "الهرم",
-                            NameEn = "Haram"
-                        },
-                        new
-                        {
-                            Id = 76,
-                            GovernorateId = 2,
-                            NameAr = "الوراق",
-                            NameEn = "Warraq"
-                        },
-                        new
-                        {
-                            Id = 77,
-                            GovernorateId = 2,
-                            NameAr = "امبابة",
-                            NameEn = "Imbaba"
-                        },
-                        new
-                        {
-                            Id = 78,
-                            GovernorateId = 2,
-                            NameAr = "بولاق الدكرور",
-                            NameEn = "Boulaq Dakrour"
-                        },
-                        new
-                        {
-                            Id = 79,
-                            GovernorateId = 2,
-                            NameAr = "الواحات البحرية",
-                            NameEn = "Al Wahat Al Baharia"
-                        },
-                        new
-                        {
-                            Id = 80,
-                            GovernorateId = 2,
-                            NameAr = "العمرانية",
-                            NameEn = "Omraneya"
-                        },
-                        new
-                        {
-                            Id = 81,
-                            GovernorateId = 2,
-                            NameAr = "المنيب",
-                            NameEn = "Moneeb"
-                        },
-                        new
-                        {
-                            Id = 82,
-                            GovernorateId = 2,
-                            NameAr = "بين السرايات",
-                            NameEn = "Bin Alsarayat"
-                        },
-                        new
-                        {
-                            Id = 83,
-                            GovernorateId = 2,
-                            NameAr = "الكيت كات",
-                            NameEn = "Kit Kat"
-                        },
-                        new
-                        {
-                            Id = 84,
-                            GovernorateId = 2,
-                            NameAr = "المهندسين",
-                            NameEn = "Mohandessin"
-                        },
-                        new
-                        {
-                            Id = 85,
-                            GovernorateId = 2,
-                            NameAr = "فيصل",
-                            NameEn = "Faisal"
-                        },
-                        new
-                        {
-                            Id = 86,
-                            GovernorateId = 2,
-                            NameAr = "أبو رواش",
-                            NameEn = "Abu Rawash"
-                        },
-                        new
-                        {
-                            Id = 87,
-                            GovernorateId = 2,
-                            NameAr = "حدائق الأهرام",
-                            NameEn = "Hadayek Alahram"
-                        },
-                        new
-                        {
-                            Id = 88,
-                            GovernorateId = 2,
-                            NameAr = "الحرانية",
-                            NameEn = "Haraneya"
-                        },
-                        new
-                        {
-                            Id = 89,
-                            GovernorateId = 2,
-                            NameAr = "حدائق اكتوبر",
-                            NameEn = "Hadayek October"
-                        },
-                        new
-                        {
-                            Id = 90,
-                            GovernorateId = 2,
-                            NameAr = "صفط اللبن",
-                            NameEn = "Saft Allaban"
-                        },
-                        new
-                        {
-                            Id = 91,
-                            GovernorateId = 2,
-                            NameAr = "القرية الذكية",
-                            NameEn = "Smart Village"
-                        },
-                        new
-                        {
-                            Id = 92,
-                            GovernorateId = 2,
-                            NameAr = "ارض اللواء",
-                            NameEn = "Ard Ellwaa"
-                        },
-                        new
-                        {
-                            Id = 93,
-                            GovernorateId = 3,
-                            NameAr = "ابو قير",
-                            NameEn = "Abu Qir"
-                        },
-                        new
-                        {
-                            Id = 94,
-                            GovernorateId = 3,
-                            NameAr = "الابراهيمية",
-                            NameEn = "Al Ibrahimeyah"
-                        },
-                        new
-                        {
-                            Id = 95,
-                            GovernorateId = 3,
-                            NameAr = "الأزاريطة",
-                            NameEn = "Azarita"
-                        },
-                        new
-                        {
-                            Id = 96,
-                            GovernorateId = 3,
-                            NameAr = "الانفوشى",
-                            NameEn = "Anfoushi"
-                        },
-                        new
-                        {
-                            Id = 97,
-                            GovernorateId = 3,
-                            NameAr = "الدخيلة",
-                            NameEn = "Dekheila"
-                        },
-                        new
-                        {
-                            Id = 98,
-                            GovernorateId = 3,
-                            NameAr = "السيوف",
-                            NameEn = "El Soyof"
-                        },
-                        new
-                        {
-                            Id = 99,
-                            GovernorateId = 3,
-                            NameAr = "العامرية",
-                            NameEn = "Ameria"
-                        },
-                        new
-                        {
-                            Id = 100,
-                            GovernorateId = 3,
-                            NameAr = "اللبان",
-                            NameEn = "El Labban"
-                        },
-                        new
-                        {
-                            Id = 101,
-                            GovernorateId = 3,
-                            NameAr = "المفروزة",
-                            NameEn = "Al Mafrouza"
-                        },
-                        new
-                        {
-                            Id = 102,
-                            GovernorateId = 3,
-                            NameAr = "المنتزه",
-                            NameEn = "El Montaza"
-                        },
-                        new
-                        {
-                            Id = 103,
-                            GovernorateId = 3,
-                            NameAr = "المنشية",
-                            NameEn = "Mansheya"
-                        },
-                        new
-                        {
-                            Id = 104,
-                            GovernorateId = 3,
-                            NameAr = "الناصرية",
-                            NameEn = "Naseria"
-                        },
-                        new
-                        {
-                            Id = 105,
-                            GovernorateId = 3,
-                            NameAr = "امبروزو",
-                            NameEn = "Ambrozo"
-                        },
-                        new
-                        {
-                            Id = 106,
-                            GovernorateId = 3,
-                            NameAr = "باب شرق",
-                            NameEn = "Bab Sharq"
-                        },
-                        new
-                        {
-                            Id = 107,
-                            GovernorateId = 3,
-                            NameAr = "برج العرب",
-                            NameEn = "Bourj Alarab"
-                        },
-                        new
-                        {
-                            Id = 108,
-                            GovernorateId = 3,
-                            NameAr = "ستانلى",
-                            NameEn = "Stanley"
-                        },
-                        new
-                        {
-                            Id = 109,
-                            GovernorateId = 3,
-                            NameAr = "سموحة",
-                            NameEn = "Smouha"
-                        },
-                        new
-                        {
-                            Id = 110,
-                            GovernorateId = 3,
-                            NameAr = "سيدى بشر",
-                            NameEn = "Sidi Bishr"
-                        },
-                        new
-                        {
-                            Id = 111,
-                            GovernorateId = 3,
-                            NameAr = "شدس",
-                            NameEn = "Shads"
-                        },
-                        new
-                        {
-                            Id = 112,
-                            GovernorateId = 3,
-                            NameAr = "غيط العنب",
-                            NameEn = "Gheet Alenab"
-                        },
-                        new
-                        {
-                            Id = 113,
-                            GovernorateId = 3,
-                            NameAr = "فلمينج",
-                            NameEn = "Fleming"
-                        },
-                        new
-                        {
-                            Id = 114,
-                            GovernorateId = 3,
-                            NameAr = "فيكتوريا",
-                            NameEn = "Victoria"
-                        },
-                        new
-                        {
-                            Id = 115,
-                            GovernorateId = 3,
-                            NameAr = "كامب شيزار",
-                            NameEn = "Camp Shizar"
-                        },
-                        new
-                        {
-                            Id = 116,
-                            GovernorateId = 3,
-                            NameAr = "كرموز",
-                            NameEn = "Karmooz"
-                        },
-                        new
-                        {
-                            Id = 117,
-                            GovernorateId = 3,
-                            NameAr = "محطة الرمل",
-                            NameEn = "Mahta Alraml"
-                        },
-                        new
-                        {
-                            Id = 118,
-                            GovernorateId = 3,
-                            NameAr = "مينا البصل",
-                            NameEn = "Mina El-Basal"
-                        },
-                        new
-                        {
-                            Id = 119,
-                            GovernorateId = 3,
-                            NameAr = "العصافرة",
-                            NameEn = "Asafra"
-                        },
-                        new
-                        {
-                            Id = 120,
-                            GovernorateId = 3,
-                            NameAr = "العجمي",
-                            NameEn = "Agamy"
-                        },
-                        new
-                        {
-                            Id = 121,
-                            GovernorateId = 3,
-                            NameAr = "بكوس",
-                            NameEn = "Bakos"
-                        },
-                        new
-                        {
-                            Id = 122,
-                            GovernorateId = 3,
-                            NameAr = "بولكلي",
-                            NameEn = "Boulkly"
-                        },
-                        new
-                        {
-                            Id = 123,
-                            GovernorateId = 3,
-                            NameAr = "كليوباترا",
-                            NameEn = "Cleopatra"
-                        },
-                        new
-                        {
-                            Id = 124,
-                            GovernorateId = 3,
-                            NameAr = "جليم",
-                            NameEn = "Glim"
-                        },
-                        new
-                        {
-                            Id = 125,
-                            GovernorateId = 3,
-                            NameAr = "المعمورة",
-                            NameEn = "Al Mamurah"
-                        },
-                        new
-                        {
-                            Id = 126,
-                            GovernorateId = 3,
-                            NameAr = "المندرة",
-                            NameEn = "Al Mandara"
-                        },
-                        new
-                        {
-                            Id = 127,
-                            GovernorateId = 3,
-                            NameAr = "محرم بك",
-                            NameEn = "Moharam Bek"
-                        },
-                        new
-                        {
-                            Id = 128,
-                            GovernorateId = 3,
-                            NameAr = "الشاطبي",
-                            NameEn = "Elshatby"
-                        },
-                        new
-                        {
-                            Id = 129,
-                            GovernorateId = 3,
-                            NameAr = "سيدي جابر",
-                            NameEn = "Sidi Gaber"
-                        },
-                        new
-                        {
-                            Id = 130,
-                            GovernorateId = 3,
-                            NameAr = "الساحل الشمالي",
-                            NameEn = "North Coast/sahel"
-                        },
-                        new
-                        {
-                            Id = 131,
-                            GovernorateId = 3,
-                            NameAr = "الحضرة",
-                            NameEn = "Alhadra"
-                        },
-                        new
-                        {
-                            Id = 132,
-                            GovernorateId = 3,
-                            NameAr = "العطارين",
-                            NameEn = "Alattarin"
-                        },
-                        new
-                        {
-                            Id = 133,
-                            GovernorateId = 3,
-                            NameAr = "سيدي كرير",
-                            NameEn = "Sidi Kerir"
-                        },
-                        new
-                        {
-                            Id = 134,
-                            GovernorateId = 3,
-                            NameAr = "الجمرك",
-                            NameEn = "Elgomrok"
-                        },
-                        new
-                        {
-                            Id = 135,
-                            GovernorateId = 3,
-                            NameAr = "المكس",
-                            NameEn = "Al Max"
-                        },
-                        new
-                        {
-                            Id = 136,
-                            GovernorateId = 3,
-                            NameAr = "مارينا",
-                            NameEn = "Marina"
-                        },
-                        new
-                        {
-                            Id = 137,
-                            GovernorateId = 4,
-                            NameAr = "المنصورة",
-                            NameEn = "Mansoura"
-                        },
-                        new
-                        {
-                            Id = 138,
-                            GovernorateId = 4,
-                            NameAr = "طلخا",
-                            NameEn = "Talkha"
-                        },
-                        new
-                        {
-                            Id = 139,
-                            GovernorateId = 4,
-                            NameAr = "ميت غمر",
-                            NameEn = "Mitt Ghamr"
-                        },
-                        new
-                        {
-                            Id = 140,
-                            GovernorateId = 4,
-                            NameAr = "دكرنس",
-                            NameEn = "Dekernes"
-                        },
-                        new
-                        {
-                            Id = 141,
-                            GovernorateId = 4,
-                            NameAr = "أجا",
-                            NameEn = "Aga"
-                        },
-                        new
-                        {
-                            Id = 142,
-                            GovernorateId = 4,
-                            NameAr = "منية النصر",
-                            NameEn = "Menia El Nasr"
-                        },
-                        new
-                        {
-                            Id = 143,
-                            GovernorateId = 4,
-                            NameAr = "السنبلاوين",
-                            NameEn = "Sinbillawin"
-                        },
-                        new
-                        {
-                            Id = 144,
-                            GovernorateId = 4,
-                            NameAr = "الكردي",
-                            NameEn = "El Kurdi"
-                        },
-                        new
-                        {
-                            Id = 145,
-                            GovernorateId = 4,
-                            NameAr = "بني عبيد",
-                            NameEn = "Bani Ubaid"
-                        },
-                        new
-                        {
-                            Id = 146,
-                            GovernorateId = 4,
-                            NameAr = "المنزلة",
-                            NameEn = "Al Manzala"
-                        },
-                        new
-                        {
-                            Id = 147,
-                            GovernorateId = 4,
-                            NameAr = "تمي الأمديد",
-                            NameEn = "tami al'amdid"
-                        },
-                        new
-                        {
-                            Id = 148,
-                            GovernorateId = 4,
-                            NameAr = "الجمالية",
-                            NameEn = "aljamalia"
-                        },
-                        new
-                        {
-                            Id = 149,
-                            GovernorateId = 4,
-                            NameAr = "شربين",
-                            NameEn = "Sherbin"
-                        },
-                        new
-                        {
-                            Id = 150,
-                            GovernorateId = 4,
-                            NameAr = "المطرية",
-                            NameEn = "Mataria"
-                        },
-                        new
-                        {
-                            Id = 151,
-                            GovernorateId = 4,
-                            NameAr = "بلقاس",
-                            NameEn = "Belqas"
-                        },
-                        new
-                        {
-                            Id = 152,
-                            GovernorateId = 4,
-                            NameAr = "ميت سلسيل",
-                            NameEn = "Meet Salsil"
-                        },
-                        new
-                        {
-                            Id = 153,
-                            GovernorateId = 4,
-                            NameAr = "جمصة",
-                            NameEn = "Gamasa"
-                        },
-                        new
-                        {
-                            Id = 154,
-                            GovernorateId = 4,
-                            NameAr = "محلة دمنة",
-                            NameEn = "Mahalat Damana"
-                        },
-                        new
-                        {
-                            Id = 155,
-                            GovernorateId = 4,
-                            NameAr = "نبروه",
-                            NameEn = "Nabroh"
-                        },
-                        new
-                        {
-                            Id = 156,
-                            GovernorateId = 5,
-                            NameAr = "الغردقة",
-                            NameEn = "Hurghada"
-                        },
-                        new
-                        {
-                            Id = 157,
-                            GovernorateId = 5,
-                            NameAr = "رأس غارب",
-                            NameEn = "Ras Ghareb"
-                        },
-                        new
-                        {
-                            Id = 158,
-                            GovernorateId = 5,
-                            NameAr = "سفاجا",
-                            NameEn = "Safaga"
-                        },
-                        new
-                        {
-                            Id = 159,
-                            GovernorateId = 5,
-                            NameAr = "القصير",
-                            NameEn = "El Qusiar"
-                        },
-                        new
-                        {
-                            Id = 160,
-                            GovernorateId = 5,
-                            NameAr = "مرسى علم",
-                            NameEn = "Marsa Alam"
-                        },
-                        new
-                        {
-                            Id = 161,
-                            GovernorateId = 5,
-                            NameAr = "الشلاتين",
-                            NameEn = "Shalatin"
-                        },
-                        new
-                        {
-                            Id = 162,
-                            GovernorateId = 5,
-                            NameAr = "حلايب",
-                            NameEn = "Halaib"
-                        },
-                        new
-                        {
-                            Id = 163,
-                            GovernorateId = 5,
-                            NameAr = "الدهار",
-                            NameEn = "Aldahar"
-                        },
-                        new
-                        {
-                            Id = 164,
-                            GovernorateId = 6,
-                            NameAr = "دمنهور",
-                            NameEn = "Damanhour"
-                        },
-                        new
-                        {
-                            Id = 165,
-                            GovernorateId = 6,
-                            NameAr = "كفر الدوار",
-                            NameEn = "Kafr El Dawar"
-                        },
-                        new
-                        {
-                            Id = 166,
-                            GovernorateId = 6,
-                            NameAr = "رشيد",
-                            NameEn = "Rashid"
-                        },
-                        new
-                        {
-                            Id = 167,
-                            GovernorateId = 6,
-                            NameAr = "إدكو",
-                            NameEn = "Edco"
-                        },
-                        new
-                        {
-                            Id = 168,
-                            GovernorateId = 6,
-                            NameAr = "أبو المطامير",
-                            NameEn = "Abu al-Matamir"
-                        },
-                        new
-                        {
-                            Id = 169,
-                            GovernorateId = 6,
-                            NameAr = "أبو حمص",
-                            NameEn = "Abu Homs"
-                        },
-                        new
-                        {
-                            Id = 170,
-                            GovernorateId = 6,
-                            NameAr = "الدلنجات",
-                            NameEn = "Delengat"
-                        },
-                        new
-                        {
-                            Id = 171,
-                            GovernorateId = 6,
-                            NameAr = "المحمودية",
-                            NameEn = "Mahmoudiyah"
-                        },
-                        new
-                        {
-                            Id = 172,
-                            GovernorateId = 6,
-                            NameAr = "الرحمانية",
-                            NameEn = "Rahmaniyah"
-                        },
-                        new
-                        {
-                            Id = 173,
-                            GovernorateId = 6,
-                            NameAr = "إيتاي البارود",
-                            NameEn = "Itai Baroud"
-                        },
-                        new
-                        {
-                            Id = 174,
-                            GovernorateId = 6,
-                            NameAr = "حوش عيسى",
-                            NameEn = "Housh Eissa"
-                        },
-                        new
-                        {
-                            Id = 175,
-                            GovernorateId = 6,
-                            NameAr = "شبراخيت",
-                            NameEn = "Shubrakhit"
-                        },
-                        new
-                        {
-                            Id = 176,
-                            GovernorateId = 6,
-                            NameAr = "كوم حمادة",
-                            NameEn = "Kom Hamada"
-                        },
-                        new
-                        {
-                            Id = 177,
-                            GovernorateId = 6,
-                            NameAr = "بدر",
-                            NameEn = "Badr"
-                        },
-                        new
-                        {
-                            Id = 178,
-                            GovernorateId = 6,
-                            NameAr = "وادي النطرون",
-                            NameEn = "Wadi Natrun"
-                        },
-                        new
-                        {
-                            Id = 179,
-                            GovernorateId = 6,
-                            NameAr = "النوبارية الجديدة",
-                            NameEn = "New Nubaria"
-                        },
-                        new
-                        {
-                            Id = 180,
-                            GovernorateId = 6,
-                            NameAr = "النوبارية",
-                            NameEn = "Alnoubareya"
-                        },
-                        new
-                        {
-                            Id = 181,
-                            GovernorateId = 7,
-                            NameAr = "الفيوم",
-                            NameEn = "Fayoum"
-                        },
-                        new
-                        {
-                            Id = 182,
-                            GovernorateId = 7,
-                            NameAr = "الفيوم الجديدة",
-                            NameEn = "Fayoum El Gedida"
-                        },
-                        new
-                        {
-                            Id = 183,
-                            GovernorateId = 7,
-                            NameAr = "طامية",
-                            NameEn = "Tamiya"
-                        },
-                        new
-                        {
-                            Id = 184,
-                            GovernorateId = 7,
-                            NameAr = "سنورس",
-                            NameEn = "Snores"
-                        },
-                        new
-                        {
-                            Id = 185,
-                            GovernorateId = 7,
-                            NameAr = "إطسا",
-                            NameEn = "Etsa"
-                        },
-                        new
-                        {
-                            Id = 186,
-                            GovernorateId = 7,
-                            NameAr = "إبشواي",
-                            NameEn = "Epschway"
-                        },
-                        new
-                        {
-                            Id = 187,
-                            GovernorateId = 7,
-                            NameAr = "يوسف الصديق",
-                            NameEn = "Yusuf El Sediaq"
-                        },
-                        new
-                        {
-                            Id = 188,
-                            GovernorateId = 7,
-                            NameAr = "الحادقة",
-                            NameEn = "Hadqa"
-                        },
-                        new
-                        {
-                            Id = 189,
-                            GovernorateId = 7,
-                            NameAr = "اطسا",
-                            NameEn = "Atsa"
-                        },
-                        new
-                        {
-                            Id = 190,
-                            GovernorateId = 7,
-                            NameAr = "الجامعة",
-                            NameEn = "Algamaa"
-                        },
-                        new
-                        {
-                            Id = 191,
-                            GovernorateId = 7,
-                            NameAr = "السيالة",
-                            NameEn = "Sayala"
-                        },
-                        new
-                        {
-                            Id = 192,
-                            GovernorateId = 8,
-                            NameAr = "طنطا",
-                            NameEn = "Tanta"
-                        },
-                        new
-                        {
-                            Id = 193,
-                            GovernorateId = 8,
-                            NameAr = "المحلة الكبرى",
-                            NameEn = "Al Mahalla Al Kobra"
-                        },
-                        new
-                        {
-                            Id = 194,
-                            GovernorateId = 8,
-                            NameAr = "كفر الزيات",
-                            NameEn = "Kafr El Zayat"
-                        },
-                        new
-                        {
-                            Id = 195,
-                            GovernorateId = 8,
-                            NameAr = "زفتى",
-                            NameEn = "Zefta"
-                        },
-                        new
-                        {
-                            Id = 196,
-                            GovernorateId = 8,
-                            NameAr = "السنطة",
-                            NameEn = "El Santa"
-                        },
-                        new
-                        {
-                            Id = 197,
-                            GovernorateId = 8,
-                            NameAr = "قطور",
-                            NameEn = "Qutour"
-                        },
-                        new
-                        {
-                            Id = 198,
-                            GovernorateId = 8,
-                            NameAr = "بسيون",
-                            NameEn = "Basion"
-                        },
-                        new
-                        {
-                            Id = 199,
-                            GovernorateId = 8,
-                            NameAr = "سمنود",
-                            NameEn = "Samannoud"
-                        },
-                        new
-                        {
-                            Id = 200,
-                            GovernorateId = 9,
-                            NameAr = "الإسماعيلية",
-                            NameEn = "Ismailia"
-                        },
-                        new
-                        {
-                            Id = 201,
-                            GovernorateId = 9,
-                            NameAr = "فايد",
-                            NameEn = "Fayed"
-                        },
-                        new
-                        {
-                            Id = 202,
-                            GovernorateId = 9,
-                            NameAr = "القنطرة شرق",
-                            NameEn = "Qantara Sharq"
-                        },
-                        new
-                        {
-                            Id = 203,
-                            GovernorateId = 9,
-                            NameAr = "القنطرة غرب",
-                            NameEn = "Qantara Gharb"
-                        },
-                        new
-                        {
-                            Id = 204,
-                            GovernorateId = 9,
-                            NameAr = "التل الكبير",
-                            NameEn = "El Tal El Kabier"
-                        },
-                        new
-                        {
-                            Id = 205,
-                            GovernorateId = 9,
-                            NameAr = "أبو صوير",
-                            NameEn = "Abu Sawir"
-                        },
-                        new
-                        {
-                            Id = 206,
-                            GovernorateId = 9,
-                            NameAr = "القصاصين الجديدة",
-                            NameEn = "Kasasien El Gedida"
-                        },
-                        new
-                        {
-                            Id = 207,
-                            GovernorateId = 9,
-                            NameAr = "نفيشة",
-                            NameEn = "Nefesha"
-                        },
-                        new
-                        {
-                            Id = 208,
-                            GovernorateId = 9,
-                            NameAr = "الشيخ زايد",
-                            NameEn = "Sheikh Zayed"
-                        },
-                        new
-                        {
-                            Id = 209,
-                            GovernorateId = 10,
-                            NameAr = "شبين الكوم",
-                            NameEn = "Shbeen El Koom"
-                        },
-                        new
-                        {
-                            Id = 210,
-                            GovernorateId = 10,
-                            NameAr = "مدينة السادات",
-                            NameEn = "Sadat City"
-                        },
-                        new
-                        {
-                            Id = 211,
-                            GovernorateId = 10,
-                            NameAr = "منوف",
-                            NameEn = "Menouf"
-                        },
-                        new
-                        {
-                            Id = 212,
-                            GovernorateId = 10,
-                            NameAr = "سرس الليان",
-                            NameEn = "Sars El-Layan"
-                        },
-                        new
-                        {
-                            Id = 213,
-                            GovernorateId = 10,
-                            NameAr = "أشمون",
-                            NameEn = "Ashmon"
-                        },
-                        new
-                        {
-                            Id = 214,
-                            GovernorateId = 10,
-                            NameAr = "الباجور",
-                            NameEn = "Al Bagor"
-                        },
-                        new
-                        {
-                            Id = 215,
-                            GovernorateId = 10,
-                            NameAr = "قويسنا",
-                            NameEn = "Quesna"
-                        },
-                        new
-                        {
-                            Id = 216,
-                            GovernorateId = 10,
-                            NameAr = "بركة السبع",
-                            NameEn = "Berkat El Saba"
-                        },
-                        new
-                        {
-                            Id = 217,
-                            GovernorateId = 10,
-                            NameAr = "تلا",
-                            NameEn = "Tala"
-                        },
-                        new
-                        {
-                            Id = 218,
-                            GovernorateId = 10,
-                            NameAr = "الشهداء",
-                            NameEn = "Al Shohada"
-                        },
-                        new
-                        {
-                            Id = 219,
-                            GovernorateId = 11,
-                            NameAr = "المنيا",
-                            NameEn = "Minya"
-                        },
-                        new
-                        {
-                            Id = 220,
-                            GovernorateId = 11,
-                            NameAr = "المنيا الجديدة",
-                            NameEn = "Minya El Gedida"
-                        },
-                        new
-                        {
-                            Id = 221,
-                            GovernorateId = 11,
-                            NameAr = "العدوة",
-                            NameEn = "El Adwa"
-                        },
-                        new
-                        {
-                            Id = 222,
-                            GovernorateId = 11,
-                            NameAr = "مغاغة",
-                            NameEn = "Magagha"
-                        },
-                        new
-                        {
-                            Id = 223,
-                            GovernorateId = 11,
-                            NameAr = "بني مزار",
-                            NameEn = "Bani Mazar"
-                        },
-                        new
-                        {
-                            Id = 224,
-                            GovernorateId = 11,
-                            NameAr = "مطاي",
-                            NameEn = "Mattay"
-                        },
-                        new
-                        {
-                            Id = 225,
-                            GovernorateId = 11,
-                            NameAr = "سمالوط",
-                            NameEn = "Samalut"
-                        },
-                        new
-                        {
-                            Id = 226,
-                            GovernorateId = 11,
-                            NameAr = "المدينة الفكرية",
-                            NameEn = "Madinat El Fekria"
-                        },
-                        new
-                        {
-                            Id = 227,
-                            GovernorateId = 11,
-                            NameAr = "ملوي",
-                            NameEn = "Meloy"
-                        },
-                        new
-                        {
-                            Id = 228,
-                            GovernorateId = 11,
-                            NameAr = "دير مواس",
-                            NameEn = "Deir Mawas"
-                        },
-                        new
-                        {
-                            Id = 229,
-                            GovernorateId = 11,
-                            NameAr = "ابو قرقاص",
-                            NameEn = "Abu Qurqas"
-                        },
-                        new
-                        {
-                            Id = 230,
-                            GovernorateId = 11,
-                            NameAr = "ارض سلطان",
-                            NameEn = "Ard Sultan"
-                        },
-                        new
-                        {
-                            Id = 231,
-                            GovernorateId = 12,
-                            NameAr = "بنها",
-                            NameEn = "Banha"
-                        },
-                        new
-                        {
-                            Id = 232,
-                            GovernorateId = 12,
-                            NameAr = "قليوب",
-                            NameEn = "Qalyub"
-                        },
-                        new
-                        {
-                            Id = 233,
-                            GovernorateId = 12,
-                            NameAr = "شبرا الخيمة",
-                            NameEn = "Shubra Al Khaimah"
-                        },
-                        new
-                        {
-                            Id = 234,
-                            GovernorateId = 12,
-                            NameAr = "القناطر الخيرية",
-                            NameEn = "Al Qanater Charity"
-                        },
-                        new
-                        {
-                            Id = 235,
-                            GovernorateId = 12,
-                            NameAr = "الخانكة",
-                            NameEn = "Khanka"
-                        },
-                        new
-                        {
-                            Id = 236,
-                            GovernorateId = 12,
-                            NameAr = "كفر شكر",
-                            NameEn = "Kafr Shukr"
-                        },
-                        new
-                        {
-                            Id = 237,
-                            GovernorateId = 12,
-                            NameAr = "طوخ",
-                            NameEn = "Tukh"
-                        },
-                        new
-                        {
-                            Id = 238,
-                            GovernorateId = 12,
-                            NameAr = "قها",
-                            NameEn = "Qaha"
-                        },
-                        new
-                        {
-                            Id = 239,
-                            GovernorateId = 12,
-                            NameAr = "العبور",
-                            NameEn = "Obour"
-                        },
-                        new
-                        {
-                            Id = 240,
-                            GovernorateId = 12,
-                            NameAr = "الخصوص",
-                            NameEn = "Khosous"
-                        },
-                        new
-                        {
-                            Id = 241,
-                            GovernorateId = 12,
-                            NameAr = "شبين القناطر",
-                            NameEn = "Shibin Al Qanater"
-                        },
-                        new
-                        {
-                            Id = 242,
-                            GovernorateId = 12,
-                            NameAr = "مسطرد",
-                            NameEn = "Mostorod"
-                        },
-                        new
-                        {
-                            Id = 243,
-                            GovernorateId = 13,
-                            NameAr = "الخارجة",
-                            NameEn = "El Kharga"
-                        },
-                        new
-                        {
-                            Id = 244,
-                            GovernorateId = 13,
-                            NameAr = "باريس",
-                            NameEn = "Paris"
-                        },
-                        new
-                        {
-                            Id = 245,
-                            GovernorateId = 13,
-                            NameAr = "موط",
-                            NameEn = "Mout"
-                        },
-                        new
-                        {
-                            Id = 246,
-                            GovernorateId = 13,
-                            NameAr = "الفرافرة",
-                            NameEn = "Farafra"
-                        },
-                        new
-                        {
-                            Id = 247,
-                            GovernorateId = 13,
-                            NameAr = "بلاط",
-                            NameEn = "Balat"
-                        },
-                        new
-                        {
-                            Id = 248,
-                            GovernorateId = 13,
-                            NameAr = "الداخلة",
-                            NameEn = "Dakhla"
-                        },
-                        new
-                        {
-                            Id = 249,
-                            GovernorateId = 14,
-                            NameAr = "السويس",
-                            NameEn = "Suez"
-                        },
-                        new
-                        {
-                            Id = 250,
-                            GovernorateId = 14,
-                            NameAr = "الجناين",
-                            NameEn = "Alganayen"
-                        },
-                        new
-                        {
-                            Id = 251,
-                            GovernorateId = 14,
-                            NameAr = "عتاقة",
-                            NameEn = "Ataqah"
-                        },
-                        new
-                        {
-                            Id = 252,
-                            GovernorateId = 14,
-                            NameAr = "العين السخنة",
-                            NameEn = "Ain Sokhna"
-                        },
-                        new
-                        {
-                            Id = 253,
-                            GovernorateId = 14,
-                            NameAr = "فيصل",
-                            NameEn = "Faysal"
-                        },
-                        new
-                        {
-                            Id = 254,
-                            GovernorateId = 15,
-                            NameAr = "أسوان",
-                            NameEn = "Aswan"
-                        },
-                        new
-                        {
-                            Id = 255,
-                            GovernorateId = 15,
-                            NameAr = "أسوان الجديدة",
-                            NameEn = "Aswan El Gedida"
-                        },
-                        new
-                        {
-                            Id = 256,
-                            GovernorateId = 15,
-                            NameAr = "دراو",
-                            NameEn = "Drau"
-                        },
-                        new
-                        {
-                            Id = 257,
-                            GovernorateId = 15,
-                            NameAr = "كوم أمبو",
-                            NameEn = "Kom Ombo"
-                        },
-                        new
-                        {
-                            Id = 258,
-                            GovernorateId = 15,
-                            NameAr = "نصر النوبة",
-                            NameEn = "Nasr Al Nuba"
-                        },
-                        new
-                        {
-                            Id = 259,
-                            GovernorateId = 15,
-                            NameAr = "كلابشة",
-                            NameEn = "Kalabsha"
-                        },
-                        new
-                        {
-                            Id = 260,
-                            GovernorateId = 15,
-                            NameAr = "إدفو",
-                            NameEn = "Edfu"
-                        },
-                        new
-                        {
-                            Id = 261,
-                            GovernorateId = 15,
-                            NameAr = "الرديسية",
-                            NameEn = "Al-Radisiyah"
-                        },
-                        new
-                        {
-                            Id = 262,
-                            GovernorateId = 15,
-                            NameAr = "البصيلية",
-                            NameEn = "Al Basilia"
-                        },
-                        new
-                        {
-                            Id = 263,
-                            GovernorateId = 15,
-                            NameAr = "السباعية",
-                            NameEn = "Al Sibaeia"
-                        },
-                        new
-                        {
-                            Id = 264,
-                            GovernorateId = 15,
-                            NameAr = "ابوسمبل السياحية",
-                            NameEn = "Abo Simbl Al Siyahia"
-                        },
-                        new
-                        {
-                            Id = 265,
-                            GovernorateId = 15,
-                            NameAr = "مرسى علم",
-                            NameEn = "Marsa Alam"
-                        },
-                        new
-                        {
-                            Id = 266,
-                            GovernorateId = 16,
-                            NameAr = "أسيوط",
-                            NameEn = "Assiut"
-                        },
-                        new
-                        {
-                            Id = 267,
-                            GovernorateId = 16,
-                            NameAr = "أسيوط الجديدة",
-                            NameEn = "Assiut El Gedida"
-                        },
-                        new
-                        {
-                            Id = 268,
-                            GovernorateId = 16,
-                            NameAr = "ديروط",
-                            NameEn = "Dayrout"
-                        },
-                        new
-                        {
-                            Id = 269,
-                            GovernorateId = 16,
-                            NameAr = "منفلوط",
-                            NameEn = "Manfalut"
-                        },
-                        new
-                        {
-                            Id = 270,
-                            GovernorateId = 16,
-                            NameAr = "القوصية",
-                            NameEn = "Qusiya"
-                        },
-                        new
-                        {
-                            Id = 271,
-                            GovernorateId = 16,
-                            NameAr = "أبنوب",
-                            NameEn = "Abnoub"
-                        },
-                        new
-                        {
-                            Id = 272,
-                            GovernorateId = 16,
-                            NameAr = "أبو تيج",
-                            NameEn = "Abu Tig"
-                        },
-                        new
-                        {
-                            Id = 273,
-                            GovernorateId = 16,
-                            NameAr = "الغنايم",
-                            NameEn = "El Ghanaim"
-                        },
-                        new
-                        {
-                            Id = 274,
-                            GovernorateId = 16,
-                            NameAr = "ساحل سليم",
-                            NameEn = "Sahel Selim"
-                        },
-                        new
-                        {
-                            Id = 275,
-                            GovernorateId = 16,
-                            NameAr = "البداري",
-                            NameEn = "El Badari"
-                        },
-                        new
-                        {
-                            Id = 276,
-                            GovernorateId = 16,
-                            NameAr = "صدفا",
-                            NameEn = "Sidfa"
-                        },
-                        new
-                        {
-                            Id = 277,
-                            GovernorateId = 17,
-                            NameAr = "بني سويف",
-                            NameEn = "Bani Sweif"
-                        },
-                        new
-                        {
-                            Id = 278,
-                            GovernorateId = 17,
-                            NameAr = "بني سويف الجديدة",
-                            NameEn = "Beni Suef El Gedida"
-                        },
-                        new
-                        {
-                            Id = 279,
-                            GovernorateId = 17,
-                            NameAr = "الواسطى",
-                            NameEn = "Al Wasta"
-                        },
-                        new
-                        {
-                            Id = 280,
-                            GovernorateId = 17,
-                            NameAr = "ناصر",
-                            NameEn = "Naser"
-                        },
-                        new
-                        {
-                            Id = 281,
-                            GovernorateId = 17,
-                            NameAr = "إهناسيا",
-                            NameEn = "Ehnasia"
-                        },
-                        new
-                        {
-                            Id = 282,
-                            GovernorateId = 17,
-                            NameAr = "ببا",
-                            NameEn = "beba"
-                        },
-                        new
-                        {
-                            Id = 283,
-                            GovernorateId = 17,
-                            NameAr = "الفشن",
-                            NameEn = "Fashn"
-                        },
-                        new
-                        {
-                            Id = 284,
-                            GovernorateId = 17,
-                            NameAr = "سمسطا",
-                            NameEn = "Somasta"
-                        },
-                        new
-                        {
-                            Id = 285,
-                            GovernorateId = 17,
-                            NameAr = "الاباصيرى",
-                            NameEn = "Alabbaseri"
-                        },
-                        new
-                        {
-                            Id = 286,
-                            GovernorateId = 17,
-                            NameAr = "مقبل",
-                            NameEn = "Mokbel"
-                        },
-                        new
-                        {
-                            Id = 287,
-                            GovernorateId = 18,
-                            NameAr = "بورسعيد",
-                            NameEn = "PorSaid"
-                        },
-                        new
-                        {
-                            Id = 288,
-                            GovernorateId = 18,
-                            NameAr = "بورفؤاد",
-                            NameEn = "Port Fouad"
-                        },
-                        new
-                        {
-                            Id = 289,
-                            GovernorateId = 18,
-                            NameAr = "العرب",
-                            NameEn = "Alarab"
-                        },
-                        new
-                        {
-                            Id = 290,
-                            GovernorateId = 18,
-                            NameAr = "حى الزهور",
-                            NameEn = "Zohour"
-                        },
-                        new
-                        {
-                            Id = 291,
-                            GovernorateId = 18,
-                            NameAr = "حى الشرق",
-                            NameEn = "Alsharq"
-                        },
-                        new
-                        {
-                            Id = 292,
-                            GovernorateId = 18,
-                            NameAr = "حى الضواحى",
-                            NameEn = "Aldawahi"
-                        },
-                        new
-                        {
-                            Id = 293,
-                            GovernorateId = 18,
-                            NameAr = "حى المناخ",
-                            NameEn = "Almanakh"
-                        },
-                        new
-                        {
-                            Id = 294,
-                            GovernorateId = 18,
-                            NameAr = "حى مبارك",
-                            NameEn = "Mubarak"
-                        },
-                        new
-                        {
-                            Id = 295,
-                            GovernorateId = 19,
-                            NameAr = "دمياط",
-                            NameEn = "Damietta"
-                        },
-                        new
-                        {
-                            Id = 296,
-                            GovernorateId = 19,
-                            NameAr = "دمياط الجديدة",
-                            NameEn = "New Damietta"
-                        },
-                        new
-                        {
-                            Id = 297,
-                            GovernorateId = 19,
-                            NameAr = "رأس البر",
-                            NameEn = "Ras El Bar"
-                        },
-                        new
-                        {
-                            Id = 298,
-                            GovernorateId = 19,
-                            NameAr = "فارسكور",
-                            NameEn = "Faraskour"
-                        },
-                        new
-                        {
-                            Id = 299,
-                            GovernorateId = 19,
-                            NameAr = "الزرقا",
-                            NameEn = "Zarqa"
-                        },
-                        new
-                        {
-                            Id = 300,
-                            GovernorateId = 19,
-                            NameAr = "السرو",
-                            NameEn = "alsaru"
-                        },
-                        new
-                        {
-                            Id = 301,
-                            GovernorateId = 19,
-                            NameAr = "الروضة",
-                            NameEn = "alruwda"
-                        },
-                        new
-                        {
-                            Id = 302,
-                            GovernorateId = 19,
-                            NameAr = "كفر البطيخ",
-                            NameEn = "Kafr El-Batikh"
-                        },
-                        new
-                        {
-                            Id = 303,
-                            GovernorateId = 19,
-                            NameAr = "عزبة البرج",
-                            NameEn = "Azbet Al Burg"
-                        },
-                        new
-                        {
-                            Id = 304,
-                            GovernorateId = 19,
-                            NameAr = "ميت أبو غالب",
-                            NameEn = "Meet Abou Ghalib"
-                        },
-                        new
-                        {
-                            Id = 305,
-                            GovernorateId = 19,
-                            NameAr = "كفر سعد",
-                            NameEn = "Kafr Saad"
-                        },
-                        new
-                        {
-                            Id = 306,
-                            GovernorateId = 20,
-                            NameAr = "الزقازيق",
-                            NameEn = "Zagazig"
-                        },
-                        new
-                        {
-                            Id = 307,
-                            GovernorateId = 20,
-                            NameAr = "العاشر من رمضان",
-                            NameEn = "Al Ashr Men Ramadan"
-                        },
-                        new
-                        {
-                            Id = 308,
-                            GovernorateId = 20,
-                            NameAr = "منيا القمح",
-                            NameEn = "Minya Al Qamh"
-                        },
-                        new
-                        {
-                            Id = 309,
-                            GovernorateId = 20,
-                            NameAr = "بلبيس",
-                            NameEn = "Belbeis"
-                        },
-                        new
-                        {
-                            Id = 310,
-                            GovernorateId = 20,
-                            NameAr = "مشتول السوق",
-                            NameEn = "Mashtoul El Souq"
-                        },
-                        new
-                        {
-                            Id = 311,
-                            GovernorateId = 20,
-                            NameAr = "القنايات",
-                            NameEn = "Qenaiat"
-                        },
-                        new
-                        {
-                            Id = 312,
-                            GovernorateId = 20,
-                            NameAr = "أبو حماد",
-                            NameEn = "Abu Hammad"
-                        },
-                        new
-                        {
-                            Id = 313,
-                            GovernorateId = 20,
-                            NameAr = "القرين",
-                            NameEn = "El Qurain"
-                        },
-                        new
-                        {
-                            Id = 314,
-                            GovernorateId = 20,
-                            NameAr = "ههيا",
-                            NameEn = "Hehia"
-                        },
-                        new
-                        {
-                            Id = 315,
-                            GovernorateId = 20,
-                            NameAr = "أبو كبير",
-                            NameEn = "Abu Kabir"
-                        },
-                        new
-                        {
-                            Id = 316,
-                            GovernorateId = 20,
-                            NameAr = "فاقوس",
-                            NameEn = "Faccus"
-                        },
-                        new
-                        {
-                            Id = 317,
-                            GovernorateId = 20,
-                            NameAr = "الصالحية الجديدة",
-                            NameEn = "El Salihia El Gedida"
-                        },
-                        new
-                        {
-                            Id = 318,
-                            GovernorateId = 20,
-                            NameAr = "الإبراهيمية",
-                            NameEn = "Al Ibrahimiyah"
-                        },
-                        new
-                        {
-                            Id = 319,
-                            GovernorateId = 20,
-                            NameAr = "ديرب نجم",
-                            NameEn = "Deirb Negm"
-                        },
-                        new
-                        {
-                            Id = 320,
-                            GovernorateId = 20,
-                            NameAr = "كفر صقر",
-                            NameEn = "Kafr Saqr"
-                        },
-                        new
-                        {
-                            Id = 321,
-                            GovernorateId = 20,
-                            NameAr = "أولاد صقر",
-                            NameEn = "Awlad Saqr"
-                        },
-                        new
-                        {
-                            Id = 322,
-                            GovernorateId = 20,
-                            NameAr = "الحسينية",
-                            NameEn = "Husseiniya"
-                        },
-                        new
-                        {
-                            Id = 323,
-                            GovernorateId = 20,
-                            NameAr = "صان الحجر القبلية",
-                            NameEn = "san alhajar alqablia"
-                        },
-                        new
-                        {
-                            Id = 324,
-                            GovernorateId = 20,
-                            NameAr = "منشأة أبو عمر",
-                            NameEn = "Manshayat Abu Omar"
-                        },
-                        new
-                        {
-                            Id = 325,
-                            GovernorateId = 21,
-                            NameAr = "الطور",
-                            NameEn = "Al Toor"
-                        },
-                        new
-                        {
-                            Id = 326,
-                            GovernorateId = 21,
-                            NameAr = "شرم الشيخ",
-                            NameEn = "Sharm El-Shaikh"
-                        },
-                        new
-                        {
-                            Id = 327,
-                            GovernorateId = 21,
-                            NameAr = "دهب",
-                            NameEn = "Dahab"
-                        },
-                        new
-                        {
-                            Id = 328,
-                            GovernorateId = 21,
-                            NameAr = "نويبع",
-                            NameEn = "Nuweiba"
-                        },
-                        new
-                        {
-                            Id = 329,
-                            GovernorateId = 21,
-                            NameAr = "طابا",
-                            NameEn = "Taba"
-                        },
-                        new
-                        {
-                            Id = 330,
-                            GovernorateId = 21,
-                            NameAr = "سانت كاترين",
-                            NameEn = "Saint Catherine"
-                        },
-                        new
-                        {
-                            Id = 331,
-                            GovernorateId = 21,
-                            NameAr = "أبو رديس",
-                            NameEn = "Abu Redis"
-                        },
-                        new
-                        {
-                            Id = 332,
-                            GovernorateId = 21,
-                            NameAr = "أبو زنيمة",
-                            NameEn = "Abu Zenaima"
-                        },
-                        new
-                        {
-                            Id = 333,
-                            GovernorateId = 21,
-                            NameAr = "رأس سدر",
-                            NameEn = "Ras Sidr"
-                        },
-                        new
-                        {
-                            Id = 334,
-                            GovernorateId = 22,
-                            NameAr = "كفر الشيخ",
-                            NameEn = "Kafr El Sheikh"
-                        },
-                        new
-                        {
-                            Id = 335,
-                            GovernorateId = 22,
-                            NameAr = "وسط البلد كفر الشيخ",
-                            NameEn = "Kafr El Sheikh Downtown"
-                        },
-                        new
-                        {
-                            Id = 336,
-                            GovernorateId = 22,
-                            NameAr = "دسوق",
-                            NameEn = "Desouq"
-                        },
-                        new
-                        {
-                            Id = 337,
-                            GovernorateId = 22,
-                            NameAr = "فوه",
-                            NameEn = "Fooh"
-                        },
-                        new
-                        {
-                            Id = 338,
-                            GovernorateId = 22,
-                            NameAr = "مطوبس",
-                            NameEn = "Metobas"
-                        },
-                        new
-                        {
-                            Id = 339,
-                            GovernorateId = 22,
-                            NameAr = "برج البرلس",
-                            NameEn = "Burg Al Burullus"
-                        },
-                        new
-                        {
-                            Id = 340,
-                            GovernorateId = 22,
-                            NameAr = "بلطيم",
-                            NameEn = "Baltim"
-                        },
-                        new
-                        {
-                            Id = 341,
-                            GovernorateId = 22,
-                            NameAr = "مصيف بلطيم",
-                            NameEn = "Masief Baltim"
-                        },
-                        new
-                        {
-                            Id = 342,
-                            GovernorateId = 22,
-                            NameAr = "الحامول",
-                            NameEn = "Hamol"
-                        },
-                        new
-                        {
-                            Id = 343,
-                            GovernorateId = 22,
-                            NameAr = "بيلا",
-                            NameEn = "Bella"
-                        },
-                        new
-                        {
-                            Id = 344,
-                            GovernorateId = 22,
-                            NameAr = "الرياض",
-                            NameEn = "Riyadh"
-                        },
-                        new
-                        {
-                            Id = 345,
-                            GovernorateId = 22,
-                            NameAr = "سيدي سالم",
-                            NameEn = "Sidi Salm"
-                        },
-                        new
-                        {
-                            Id = 346,
-                            GovernorateId = 22,
-                            NameAr = "قلين",
-                            NameEn = "Qellen"
-                        },
-                        new
-                        {
-                            Id = 347,
-                            GovernorateId = 22,
-                            NameAr = "سيدي غازي",
-                            NameEn = "Sidi Ghazi"
-                        },
-                        new
-                        {
-                            Id = 348,
-                            GovernorateId = 23,
-                            NameAr = "مرسى مطروح",
-                            NameEn = "Marsa Matrouh"
-                        },
-                        new
-                        {
-                            Id = 349,
-                            GovernorateId = 23,
-                            NameAr = "الحمام",
-                            NameEn = "El Hamam"
-                        },
-                        new
-                        {
-                            Id = 350,
-                            GovernorateId = 23,
-                            NameAr = "العلمين",
-                            NameEn = "Alamein"
-                        },
-                        new
-                        {
-                            Id = 351,
-                            GovernorateId = 23,
-                            NameAr = "الضبعة",
-                            NameEn = "Dabaa"
-                        },
-                        new
-                        {
-                            Id = 352,
-                            GovernorateId = 23,
-                            NameAr = "النجيلة",
-                            NameEn = "Al-Nagila"
-                        },
-                        new
-                        {
-                            Id = 353,
-                            GovernorateId = 23,
-                            NameAr = "سيدي براني",
-                            NameEn = "Sidi Brani"
-                        },
-                        new
-                        {
-                            Id = 354,
-                            GovernorateId = 23,
-                            NameAr = "السلوم",
-                            NameEn = "Salloum"
-                        },
-                        new
-                        {
-                            Id = 355,
-                            GovernorateId = 23,
-                            NameAr = "سيوة",
-                            NameEn = "Siwa"
-                        },
-                        new
-                        {
-                            Id = 356,
-                            GovernorateId = 23,
-                            NameAr = "مارينا",
-                            NameEn = "Marina"
-                        },
-                        new
-                        {
-                            Id = 357,
-                            GovernorateId = 23,
-                            NameAr = "الساحل الشمالى",
-                            NameEn = "North Coast"
-                        },
-                        new
-                        {
-                            Id = 358,
-                            GovernorateId = 24,
-                            NameAr = "الأقصر",
-                            NameEn = "Luxor"
-                        },
-                        new
-                        {
-                            Id = 359,
-                            GovernorateId = 24,
-                            NameAr = "الأقصر الجديدة",
-                            NameEn = "New Luxor"
-                        },
-                        new
-                        {
-                            Id = 360,
-                            GovernorateId = 24,
-                            NameAr = "إسنا",
-                            NameEn = "Esna"
-                        },
-                        new
-                        {
-                            Id = 361,
-                            GovernorateId = 24,
-                            NameAr = "طيبة الجديدة",
-                            NameEn = "New Tiba"
-                        },
-                        new
-                        {
-                            Id = 362,
-                            GovernorateId = 24,
-                            NameAr = "الزينية",
-                            NameEn = "Al ziynia"
-                        },
-                        new
-                        {
-                            Id = 363,
-                            GovernorateId = 24,
-                            NameAr = "البياضية",
-                            NameEn = "Al Bayadieh"
-                        },
-                        new
-                        {
-                            Id = 364,
-                            GovernorateId = 24,
-                            NameAr = "القرنة",
-                            NameEn = "Al Qarna"
-                        },
-                        new
-                        {
-                            Id = 365,
-                            GovernorateId = 24,
-                            NameAr = "أرمنت",
-                            NameEn = "Armant"
-                        },
-                        new
-                        {
-                            Id = 366,
-                            GovernorateId = 24,
-                            NameAr = "الطود",
-                            NameEn = "Al Tud"
-                        },
-                        new
-                        {
-                            Id = 367,
-                            GovernorateId = 25,
-                            NameAr = "قنا",
-                            NameEn = "Qena"
-                        },
-                        new
-                        {
-                            Id = 368,
-                            GovernorateId = 25,
-                            NameAr = "قنا الجديدة",
-                            NameEn = "New Qena"
-                        },
-                        new
-                        {
-                            Id = 369,
-                            GovernorateId = 25,
-                            NameAr = "ابو طشت",
-                            NameEn = "Abu Tesht"
-                        },
-                        new
-                        {
-                            Id = 370,
-                            GovernorateId = 25,
-                            NameAr = "نجع حمادي",
-                            NameEn = "Nag Hammadi"
-                        },
-                        new
-                        {
-                            Id = 371,
-                            GovernorateId = 25,
-                            NameAr = "دشنا",
-                            NameEn = "Deshna"
-                        },
-                        new
-                        {
-                            Id = 372,
-                            GovernorateId = 25,
-                            NameAr = "الوقف",
-                            NameEn = "Alwaqf"
-                        },
-                        new
-                        {
-                            Id = 373,
-                            GovernorateId = 25,
-                            NameAr = "قفط",
-                            NameEn = "Qaft"
-                        },
-                        new
-                        {
-                            Id = 374,
-                            GovernorateId = 25,
-                            NameAr = "نقادة",
-                            NameEn = "Naqada"
-                        },
-                        new
-                        {
-                            Id = 375,
-                            GovernorateId = 25,
-                            NameAr = "فرشوط",
-                            NameEn = "Farshout"
-                        },
-                        new
-                        {
-                            Id = 376,
-                            GovernorateId = 25,
-                            NameAr = "قوص",
-                            NameEn = "Quos"
-                        },
-                        new
-                        {
-                            Id = 377,
-                            GovernorateId = 26,
-                            NameAr = "العريش",
-                            NameEn = "Arish"
-                        },
-                        new
-                        {
-                            Id = 378,
-                            GovernorateId = 26,
-                            NameAr = "الشيخ زويد",
-                            NameEn = "Sheikh Zowaid"
-                        },
-                        new
-                        {
-                            Id = 379,
-                            GovernorateId = 26,
-                            NameAr = "نخل",
-                            NameEn = "Nakhl"
-                        },
-                        new
-                        {
-                            Id = 380,
-                            GovernorateId = 26,
-                            NameAr = "رفح",
-                            NameEn = "Rafah"
-                        },
-                        new
-                        {
-                            Id = 381,
-                            GovernorateId = 26,
-                            NameAr = "بئر العبد",
-                            NameEn = "Bir al-Abed"
-                        },
-                        new
-                        {
-                            Id = 382,
-                            GovernorateId = 26,
-                            NameAr = "الحسنة",
-                            NameEn = "Al Hasana"
-                        },
-                        new
-                        {
-                            Id = 383,
-                            GovernorateId = 27,
-                            NameAr = "سوهاج",
-                            NameEn = "Sohag"
-                        },
-                        new
-                        {
-                            Id = 384,
-                            GovernorateId = 27,
-                            NameAr = "سوهاج الجديدة",
-                            NameEn = "Sohag El Gedida"
-                        },
-                        new
-                        {
-                            Id = 385,
-                            GovernorateId = 27,
-                            NameAr = "أخميم",
-                            NameEn = "Akhmeem"
-                        },
-                        new
-                        {
-                            Id = 386,
-                            GovernorateId = 27,
-                            NameAr = "أخميم الجديدة",
-                            NameEn = "Akhmim El Gedida"
-                        },
-                        new
-                        {
-                            Id = 387,
-                            GovernorateId = 27,
-                            NameAr = "البلينا",
-                            NameEn = "Albalina"
-                        },
-                        new
-                        {
-                            Id = 388,
-                            GovernorateId = 27,
-                            NameAr = "المراغة",
-                            NameEn = "El Maragha"
-                        },
-                        new
-                        {
-                            Id = 389,
-                            GovernorateId = 27,
-                            NameAr = "المنشأة",
-                            NameEn = "almunsha'a"
-                        },
-                        new
-                        {
-                            Id = 390,
-                            GovernorateId = 27,
-                            NameAr = "دار السلام",
-                            NameEn = "Dar AISalaam"
-                        },
-                        new
-                        {
-                            Id = 391,
-                            GovernorateId = 27,
-                            NameAr = "جرجا",
-                            NameEn = "Gerga"
-                        },
-                        new
-                        {
-                            Id = 392,
-                            GovernorateId = 27,
-                            NameAr = "جهينة الغربية",
-                            NameEn = "Jahina Al Gharbia"
-                        },
-                        new
-                        {
-                            Id = 393,
-                            GovernorateId = 27,
-                            NameAr = "ساقلته",
-                            NameEn = "Saqilatuh"
-                        },
-                        new
-                        {
-                            Id = 394,
-                            GovernorateId = 27,
-                            NameAr = "طما",
-                            NameEn = "Tama"
-                        },
-                        new
-                        {
-                            Id = 395,
-                            GovernorateId = 27,
-                            NameAr = "طهطا",
-                            NameEn = "Tahta"
-                        },
-                        new
-                        {
-                            Id = 396,
-                            GovernorateId = 27,
-                            NameAr = "الكوثر",
-                            NameEn = "Alkawthar"
-                        });
-                });
-
-            modelBuilder.Entity("Store.Domain.Entities.Addresses.Governorate", b =>
-                {
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("NameAr")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("NameEn")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Governorates", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            NameAr = "القاهرة",
-                            NameEn = "Cairo"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            NameAr = "الجيزة",
-                            NameEn = "Giza"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            NameAr = "الأسكندرية",
-                            NameEn = "Alexandria"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            NameAr = "الدقهلية",
-                            NameEn = "Dakahlia"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            NameAr = "البحر الأحمر",
-                            NameEn = "Red Sea"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            NameAr = "البحيرة",
-                            NameEn = "Beheira"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            NameAr = "الفيوم",
-                            NameEn = "Fayoum"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            NameAr = "الغربية",
-                            NameEn = "Gharbiya"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            NameAr = "الإسماعلية",
-                            NameEn = "Ismailia"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            NameAr = "المنوفية",
-                            NameEn = "Menofia"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            NameAr = "المنيا",
-                            NameEn = "Minya"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            NameAr = "القليوبية",
-                            NameEn = "Qaliubiya"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            NameAr = "الوادي الجديد",
-                            NameEn = "New Valley"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            NameAr = "السويس",
-                            NameEn = "Suez"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            NameAr = "اسوان",
-                            NameEn = "Aswan"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            NameAr = "اسيوط",
-                            NameEn = "Assiut"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            NameAr = "بني سويف",
-                            NameEn = "Beni Suef"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            NameAr = "بورسعيد",
-                            NameEn = "Port Said"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            NameAr = "دمياط",
-                            NameEn = "Damietta"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            NameAr = "الشرقية",
-                            NameEn = "Sharkia"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            NameAr = "جنوب سيناء",
-                            NameEn = "South Sinai"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            NameAr = "كفر الشيخ",
-                            NameEn = "Kafr Al sheikh"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            NameAr = "مطروح",
-                            NameEn = "Matrouh"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            NameAr = "الأقصر",
-                            NameEn = "Luxor"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            NameAr = "قنا",
-                            NameEn = "Qena"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            NameAr = "شمال سيناء",
-                            NameEn = "North Sinai"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            NameAr = "سوهاج",
-                            NameEn = "Sohag"
-                        });
-                });
-
             modelBuilder.Entity("Store.Domain.Entities.Orders.Order", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
@@ -3022,8 +36,8 @@ namespace Store.Persistence.Migrations
                     b.Property<decimal>("TotalAmount")
                         .HasColumnType("decimal(10,2)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -3034,11 +48,14 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.Orders.OrderItem", b =>
                 {
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("ProductInventoryId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ProductInventoryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(10,2)");
@@ -3055,11 +72,8 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.Orders.Payment", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(10,2)");
@@ -3067,8 +81,8 @@ namespace Store.Persistence.Migrations
                     b.Property<int>("Method")
                         .HasColumnType("int");
 
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("PaymentDate")
                         .HasColumnType("datetime2");
@@ -3086,11 +100,8 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.Orders.Shipping", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("AddressId")
                         .HasColumnType("int");
@@ -3101,8 +112,8 @@ namespace Store.Persistence.Migrations
                     b.Property<int>("Method")
                         .HasColumnType("int");
 
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("ShippedDate")
                         .HasColumnType("datetime2");
@@ -3112,8 +123,6 @@ namespace Store.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AddressId");
-
                     b.HasIndex("OrderId")
                         .IsUnique();
 
@@ -3122,11 +131,8 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.Products.Brand", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("LogoPath")
                         .HasMaxLength(500)
@@ -3147,11 +153,8 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.Products.Category", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -3161,32 +164,29 @@ namespace Store.Persistence.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int?>("ParentCategoryId")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("RootCategoryId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ParentCategoryId");
+                    b.HasIndex("RootCategoryId");
 
                     b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("Store.Domain.Entities.Products.Product", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("BrandId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("BrandId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CreatedByUserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CreatedByUserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -3195,11 +195,8 @@ namespace Store.Persistence.Migrations
                         .HasMaxLength(-1)
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<int?>("LastModifiedByUserId")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("LastModifiedByUserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("LastModifiedOn")
                         .HasColumnType("datetime2");
@@ -3224,11 +221,8 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.Products.ProductAttribute", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("DataType")
                         .HasColumnType("int");
@@ -3248,11 +242,11 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.Products.ProductAttributeValue", b =>
                 {
-                    b.Property<int>("ProductInventoryId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ProductInventoryId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("AttributeId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("AttributeId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("value")
                         .IsRequired()
@@ -3268,26 +262,21 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.Products.ProductInventory", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CreatedByUserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CreatedByUserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
                     b.Property<bool>("IsDigital")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("LastModifiedByUserId")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("LastModifiedByUserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("LastModifiedOn")
                         .HasColumnType("datetime2");
@@ -3295,8 +284,8 @@ namespace Store.Persistence.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(10,2)");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("UnitsInStock")
                         .HasColumnType("int");
@@ -3319,11 +308,8 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.Products.ProductInventoryImage", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("DisplayOreder")
                         .HasColumnType("int");
@@ -3332,8 +318,8 @@ namespace Store.Persistence.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<int>("ProductInventoryId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ProductInventoryId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -3344,11 +330,8 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.Products.Review", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Comment")
                         .HasMaxLength(1000)
@@ -3357,14 +340,14 @@ namespace Store.Persistence.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<byte>("Rating")
                         .HasColumnType("tinyint");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -3377,11 +360,8 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.Promotions.Coupon", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -3404,17 +384,14 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.Promotions.Discount", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid?>("CouponId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("CouponId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DiscountTypeId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("DiscountTypeId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("DiscountValue")
                         .HasColumnType("int");
@@ -3432,8 +409,8 @@ namespace Store.Persistence.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("ProductInventoryId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ProductInventoryId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("Start")
                         .HasColumnType("datetime2");
@@ -3454,11 +431,8 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.Promotions.DiscountType", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -3472,14 +446,11 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.UserShopping.ShoppingCart", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -3491,11 +462,11 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.UserShopping.ShoppingCartItem", b =>
                 {
-                    b.Property<int>("ShoppingCartId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ShoppingCartId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("ProductInventoryId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ProductInventoryId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -3509,14 +480,11 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.UserShopping.WishList", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -3528,11 +496,11 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.UserShopping.WishListItem", b =>
                 {
-                    b.Property<int>("WishListId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("WishListId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("ProductInventoryId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ProductInventoryId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("WishListId", "ProductInventoryId");
 
@@ -3541,49 +509,10 @@ namespace Store.Persistence.Migrations
                     b.ToTable("WishListItems", (string)null);
                 });
 
-            modelBuilder.Entity("Store.Domain.Entities.Users.Address", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("AddressDetails")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<int>("CityId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PostalCode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CityId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Addresses", (string)null);
-                });
-
             modelBuilder.Entity("Store.Domain.Entities.Users.RefreshToken", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CreatedByIp")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -3594,20 +523,13 @@ namespace Store.Persistence.Migrations
                     b.Property<bool>("IsRevoked")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsUsed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("RevokedByIp")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<string>("Token")
                         .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -3618,11 +540,8 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.Users.Role", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -3632,30 +551,13 @@ namespace Store.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Roles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Customer"
-                        });
                 });
 
             modelBuilder.Entity("Store.Domain.Entities.Users.User", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -3665,13 +567,15 @@ namespace Store.Persistence.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("HashedPassword")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -3681,103 +585,29 @@ namespace Store.Persistence.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("LockoutEnd")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("PasswordHashed")
-                        .IsRequired()
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
-
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasMaxLength(11)
                         .HasColumnType("nvarchar(11)");
 
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
                     b.HasKey("Id");
 
                     b.ToTable("Users", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AccessFailedCount = 0,
-                            CreatedOn = new DateTime(2025, 1, 2, 0, 0, 0, 0, DateTimeKind.Utc),
-                            Email = "admin@example.com",
-                            EmailConfirmed = false,
-                            FirstName = "Saman",
-                            IsDeleted = false,
-                            LastName = "Kaream",
-                            LockoutEnabled = false,
-                            PasswordHashed = "123",
-                            PhoneNumber = "",
-                            PhoneNumberConfirmed = false
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AccessFailedCount = 0,
-                            CreatedOn = new DateTime(2025, 1, 2, 0, 0, 0, 0, DateTimeKind.Utc),
-                            Email = "customer@example.com",
-                            EmailConfirmed = false,
-                            FirstName = "Sherif",
-                            IsDeleted = false,
-                            LastName = "Ali",
-                            LockoutEnabled = false,
-                            PasswordHashed = "123",
-                            PhoneNumber = "",
-                            PhoneNumberConfirmed = false
-                        });
                 });
 
             modelBuilder.Entity("Store.Domain.Entities.Users.UserRole", b =>
                 {
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("RoleId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("AssignedOn")
-                        .HasColumnType("datetime2");
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("UserId", "RoleId");
 
                     b.HasIndex("RoleId");
 
                     b.ToTable("UserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = 1,
-                            RoleId = 1,
-                            AssignedOn = new DateTime(2025, 1, 2, 0, 0, 0, 0, DateTimeKind.Utc)
-                        },
-                        new
-                        {
-                            UserId = 2,
-                            RoleId = 2,
-                            AssignedOn = new DateTime(2025, 1, 2, 0, 0, 0, 0, DateTimeKind.Utc)
-                        });
-                });
-
-            modelBuilder.Entity("Store.Domain.Entities.Addresses.City", b =>
-                {
-                    b.HasOne("Store.Domain.Entities.Addresses.Governorate", "Governorate")
-                        .WithMany("Cities")
-                        .HasForeignKey("GovernorateId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Governorate");
                 });
 
             modelBuilder.Entity("Store.Domain.Entities.Orders.Order", b =>
@@ -3821,31 +651,21 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.Orders.Shipping", b =>
                 {
-                    b.HasOne("Store.Domain.Entities.Users.Address", "Address")
-                        .WithMany()
-                        .HasForeignKey("AddressId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("Store.Domain.Entities.Orders.Order", "Order")
                         .WithOne("Shipping")
                         .HasForeignKey("Store.Domain.Entities.Orders.Shipping", "OrderId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Address");
-
                     b.Navigation("Order");
                 });
 
             modelBuilder.Entity("Store.Domain.Entities.Products.Category", b =>
                 {
-                    b.HasOne("Store.Domain.Entities.Products.Category", "ParentCategory")
-                        .WithMany("ChildCategories")
-                        .HasForeignKey("ParentCategoryId")
+                    b.HasOne("Store.Domain.Entities.Products.Category", null)
+                        .WithMany("SubCategories")
+                        .HasForeignKey("RootCategoryId")
                         .OnDelete(DeleteBehavior.Restrict);
-
-                    b.Navigation("ParentCategory");
                 });
 
             modelBuilder.Entity("Store.Domain.Entities.Products.Product", b =>
@@ -3862,13 +682,13 @@ namespace Store.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Store.Domain.Entities.Users.User", "CreatedBy")
+                    b.HasOne("Store.Domain.Entities.Users.User", null)
                         .WithMany()
                         .HasForeignKey("CreatedByUserId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("Store.Domain.Entities.Users.User", "LastModifiedBy")
+                    b.HasOne("Store.Domain.Entities.Users.User", null)
                         .WithMany()
                         .HasForeignKey("LastModifiedByUserId")
                         .OnDelete(DeleteBehavior.NoAction);
@@ -3876,10 +696,6 @@ namespace Store.Persistence.Migrations
                     b.Navigation("Brand");
 
                     b.Navigation("Category");
-
-                    b.Navigation("CreatedBy");
-
-                    b.Navigation("LastModifiedBy");
                 });
 
             modelBuilder.Entity("Store.Domain.Entities.Products.ProductAttributeValue", b =>
@@ -3903,13 +719,13 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.Products.ProductInventory", b =>
                 {
-                    b.HasOne("Store.Domain.Entities.Users.User", "CreatedBy")
+                    b.HasOne("Store.Domain.Entities.Users.User", null)
                         .WithMany()
                         .HasForeignKey("CreatedByUserId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("Store.Domain.Entities.Users.User", "LastModifiedBy")
+                    b.HasOne("Store.Domain.Entities.Users.User", null)
                         .WithMany()
                         .HasForeignKey("LastModifiedByUserId")
                         .OnDelete(DeleteBehavior.NoAction);
@@ -3920,22 +736,16 @@ namespace Store.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("CreatedBy");
-
-                    b.Navigation("LastModifiedBy");
-
                     b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Store.Domain.Entities.Products.ProductInventoryImage", b =>
                 {
-                    b.HasOne("Store.Domain.Entities.Products.ProductInventory", "productInventory")
+                    b.HasOne("Store.Domain.Entities.Products.ProductInventory", null)
                         .WithMany("InventoryImages")
                         .HasForeignKey("ProductInventoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("productInventory");
                 });
 
             modelBuilder.Entity("Store.Domain.Entities.Products.Review", b =>
@@ -4034,32 +844,13 @@ namespace Store.Persistence.Migrations
                     b.Navigation("ProductInventory");
                 });
 
-            modelBuilder.Entity("Store.Domain.Entities.Users.Address", b =>
-                {
-                    b.HasOne("Store.Domain.Entities.Addresses.City", "City")
-                        .WithMany()
-                        .HasForeignKey("CityId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Store.Domain.Entities.Users.User", null)
-                        .WithMany("Addresses")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("City");
-                });
-
             modelBuilder.Entity("Store.Domain.Entities.Users.RefreshToken", b =>
                 {
-                    b.HasOne("Store.Domain.Entities.Users.User", "User")
+                    b.HasOne("Store.Domain.Entities.Users.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Store.Domain.Entities.Users.UserRole", b =>
@@ -4077,11 +868,6 @@ namespace Store.Persistence.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Store.Domain.Entities.Addresses.Governorate", b =>
-                {
-                    b.Navigation("Cities");
-                });
-
             modelBuilder.Entity("Store.Domain.Entities.Orders.Order", b =>
                 {
                     b.Navigation("OrderItems");
@@ -4095,7 +881,7 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.Products.Category", b =>
                 {
-                    b.Navigation("ChildCategories");
+                    b.Navigation("SubCategories");
                 });
 
             modelBuilder.Entity("Store.Domain.Entities.Products.Product", b =>
@@ -4120,11 +906,6 @@ namespace Store.Persistence.Migrations
             modelBuilder.Entity("Store.Domain.Entities.UserShopping.WishList", b =>
                 {
                     b.Navigation("Items");
-                });
-
-            modelBuilder.Entity("Store.Domain.Entities.Users.User", b =>
-                {
-                    b.Navigation("Addresses");
                 });
 #pragma warning restore 612, 618
         }
